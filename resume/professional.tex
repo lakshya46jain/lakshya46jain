@@ -75,7 +75,7 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubheadingTwo}[4]{
+\newcommand{\resumeEducationSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
@@ -124,19 +124,26 @@
 
 \section{Education}
   \resumeSubHeadingListStart
-    \resumeSubheadingTwo
+    \resumeEducationSubheading
       {Virginia Polytechnic Institute and State University (Virginia Tech)}{Expected Graduation: May 2026}
       {Bachelor of Science (B.Sc.) in Computer Science -- Data-Centric Computing}{Blacksburg, VA}
-        \resumeItemListStart
-            \small{\item[]{\textbf{Major GPA}{: 4.00/4.00} $|$ \textbf{Overall GPA}{: 3.27/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025}}}
-            \vspace{-2pt} \\
-            \small{\item[]{\textbf{Relevant Courses}{: Software Design, Data Structures \& Algorithms, Computer Organization \& Architecture, Computer Systems, Data Analytics \& Visualization, Artificial Intelligence, Machine Learning, Database Management Systems}}}
-        \resumeItemListEnd
+      \small{\item[]{\textbf{Major GPA}{: 4.00/4.00} $|$ \textbf{Overall GPA}{: 3.27/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025}}}
   \resumeSubHeadingListEnd
 \vspace{-16pt}
 
-\section{Experience}
+\section{Relevant Experience}
   \resumeSubHeadingListStart
+    \resumeSubheading
+      {Data Engineering Intern}{Jun 2025 -- Aug 2025}
+      {The Modern Data Company}{Palo Alto, CA (Remote)}
+      \resumeItemListStart
+        \resumeItem{Prototyped a Schema Drift Agent on Databricks/Delta Lake, generating PySpark/SQL via GPT-4o, reducing pipeline fix time}
+        \resumeItem{Delivered 100\% (32/32) validation via recursive struct comparison, ensuring schema evolution across complex data models}
+        \resumeItem{Streamlined ETL updates with 10+ prompt templates, turning schema changes into deterministic code for faster deployment}
+        \resumeItem{Boosted drift detection accuracy (11 renames, 4 type changes) by combining flattening strategies + engineer-provided hints}
+        \resumeItem{Explored Delta Lake evolution (mergeSchema, overwriteSchema, type-cast) ensuring reliable schema changes in production}
+      \resumeItemListEnd
+
     \resumeSubheading
       {Undergraduate Research Assistant}{Aug 2025 -- Present}
       {Virginia Tech Department of Sociology}{Blacksburg, VA}
@@ -155,62 +162,10 @@
         \resumeItem{Boosted hiring efficiency by 40\% by automating manual workflows with Power Automate and digitizing forms via PowerApps}
         \resumeItem{Analyzed 3000+ applicants using Excel to identify retention trends and building dashboards that improve visibility by 70\%}
       \resumeItemListEnd
-
-    \resumeSubheading
-      {Data Engineering Intern}{Jun 2025 -- Aug 2025}
-      {The Modern Data Company}{Palo Alto, CA (Remote)}
-      \resumeItemListStart
-        \resumeItem{Prototyped a Schema Drift Agent on Databricks/Delta Lake, generating PySpark/SQL via GPT-4o, reducing pipeline fix time}
-        \resumeItem{Delivered 100\% (32/32) validation via recursive struct comparison, ensuring schema evolution across complex data models}
-        \resumeItem{Streamlined ETL updates with 10+ prompt templates, turning schema changes into deterministic code for faster deployment}
-        \resumeItem{Boosted drift detection accuracy (11 renames, 4 type changes) by combining flattening strategies + engineer-provided hints}
-        \resumeItem{Explored Delta Lake evolution (mergeSchema, overwriteSchema, type-cast) ensuring reliable schema changes in production}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Undergraduate Grading Assistant}{Sep 2024 -- Apr 2025}
-      {Virginia Tech Dept. of Engineering Education}{Blacksburg, VA}
-      \resumeItemListStart
-        \resumeItem{Evaluated coursework for 140+ students in ENGE 1215/1216, ensuring fair and consistent grading standards}
-        \resumeItem{Delivered targeted feedback on MATLAB, SOLIDWORKS, and core engineering concepts to support student learning}
-        \resumeItem{Identified recurring challenges and shared insights with faculty to help improve future course delivery}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Virginia Tech Tutor}{Apr 2024 -- Apr 2025}
-      {Knack -- Virginia Tech Student Success Center}{Blacksburg, VA}
-      \resumeItemListStart
-        \resumeItem{Tutored students in data structures, enabling 90\% success through clear explanations and applied problem-solving}
-        \resumeItem{Maintained a 5-star rating for guidance and support, which increased student engagement and tutoring demand}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Undergraduate Research Assistant}{Sep 2024 -- Feb 2025}
-      {Virginia Tech Dept. of Computer Science}{Blacksburg, VA}
-      \resumeItemListStart
-        \resumeItem{Assisted in research on game-based learning to improved cybersecurity awareness among children aged 8-12}
-        \resumeItem{Contributed to early-stage ideation for a privacy-focused game exploring ways to increase children's engagement}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Junior Software Developer}{Jun 2023 -- Aug 2023}
-      {Upgrid Creative}{Remote}
-      \resumeItemListStart
-        \resumeItem{Developed a Flutter front-end with 13+ active screens for a responsive cross-platform restaurant app}
-        \resumeItem{Redesigned the user interface for improved usability demoing to 5+ clients for feedback and iteration}
-        \resumeItem{Collaborated in a 4-member team to streamline development workflows and improve design-to-code handoff}
-      \resumeItemListEnd
-
-    \resumeSubheading
-      {Part-Time Intern}{Dec 2021 -- Jan 2022}
-      {Mindler}{Remote}
-      \resumeItemListStart
-        \resumeItem{Completed structured masterclasses to strengthen leadership, entrepreneurial thinking, and project management skills}
-      \resumeItemListEnd      
   \resumeSubHeadingListEnd
 \vspace{-16pt}
 
-\section{Technical Skills}
+\section{Technical Skills \& Certifications}
  \begin{itemize}[leftmargin=0in, label={}]
     \small{\item{
         \textbf{Languages}{: Python, SQL, R, Java, JavaScript, TypeScript, C, MATLAB, HTML/CSS, Dart} \\
@@ -218,39 +173,16 @@
         \textbf{Data \& BI Tools}{: Databricks, Snowflake, PostgreSQL, MySQL, Firebase, Tableau, Power BI} \\
         \textbf{Cloud Platforms}{: AWS (IAM, EC2, S3, RDS, Lambda), Microsoft Azure (ML Studio), Google Cloud Platform (GCP)} \\
         \textbf{Other}{: Git, Github, Docker, CI/CD, Jupyter, Node.js, REST APIs, Flutter, React.js, Next.js, Figma, Adobe XD} \\
+        \textbf{Certifications}{: AWS Certified Cloud Practitioner, DataCamp Associate Data Engineer, Microsoft Azure AI Fundamentals} \\
     }}
  \end{itemize}
 \vspace{-16pt}
-
-\section{Certifications}
-    \setlength{\columnsep}{-10pt}
-    \begin{multicols}{3}
-        \begin{itemize}[itemsep=-2.5pt, parsep=2.5pt]
-            \small
-            % \item{\href{}{DataCamp Associate Data Scientist}}
-            % \item{\href{}{DataCamp Associate Data Analyst}}
-            % \item{\href{}{AWS Certified AI Practitioner}}
-            \item{\href{https://www.credly.com/badges/6f61813a-20f7-4b96-a6f5-57c9b959f4f9/public_url}{AWS Certified Cloud Practitioner}}
-            \item{\href{https://www.datacamp.com/certificate/DEA0011165135933}{DataCamp Associate Data Engineer}}
-            \item{\href{https://cs50.harvard.edu/certificates/8907c732-791d-40c1-93ab-71bf66c02c63}{Harvard CS50 Python Programming}}
-            \item{\href{https://www.futurelearn.com/certificates/09u23j2}{Accenture User Experience}}
-            \item{\href{https://www.credly.com/badges/77105366-fd71-42b8-947e-4a97a040f79a/public_url}{Microsoft Azure AI Fundamentals}}
-            \item{\href{https://www.credly.com/badges/255a3c80-3931-41f3-a273-0f1e731d4d6f/public_url}{IBM Enterprise Design Thinking}}
-            \item{\href{https://www.credly.com/badges/d38723c4-cff4-4558-b9e6-a8fa47048195/public_url}{IBM Internet of Things Intro}}
-            \item{\href{https://www.credly.com/badges/5e4dd9d6-c2f1-43d5-ade0-91ac1687624c/public_url}{IBM Artificial Intelligence Intro}}
-            \item{\href{https://www.credly.com/badges/76a78578-5add-46d6-a04d-a45d07880a61/public_url}{IBM Build Your Own Chat-Bot}}
-            \item{\href{https://www.credly.com/badges/366d28af-bd8b-4d66-8e88-3642ce1530a1/public_url}{IBM Cloud Intro}}
-            \item{\href{https://www.credly.com/badges/ffc25c4c-bc60-44bf-b17b-7a2024f6f05b/public_url}{IBM Quantum Computing Intro}}
-            \item{\href{https://www.credly.com/badges/065dba2a-90db-4b89-83e4-58d26c26a80c/public_url}{IBM Coding Intro}}
-        \end{itemize}
-    \end{multicols}
-    \vspace*{2.0\multicolsep}
 
 \section{Projects}
     \vspace{-5pt}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Data Science Career Dashboard} $|$ \emph{Python (Pandas, Matplotlib, Numpy, Scikit-Learn), Jupyter}}{Mar 2025 -- May 2025}
+          {\textbf{Data Science Career Dashboard} $|$ \emph{Python (Pandas, Matplotlib, NumPy, Scikit-Learn), Jupyter}}{Mar 2025 -- May 2025}
           \resumeItemListStart
             \resumeItem{Engineered a salary modeling pipeline using 100K+ job records, uncovering \$70K+ pay variance across roles and regions}
             \resumeItem{Identified top 10 in-demand skills from 785K+ job descriptions by applying NLP techniques and frequency analysis}
@@ -267,15 +199,6 @@
             \resumeItem{Deployed model on 428K+ listings from top 10 cities across 45+ U.S. states using Azure Machine Learning Studio}
             \resumeItem{Delivered a full-stack web prototype in 72 hours at VTHacks 12 by integrating the model with React.js and PostgreSQL}
           \resumeItemListEnd 
-          \vspace{-13pt}
-
-      \resumeProjectHeading
-          {\textbf{Social Media Visualizer} $|$ \emph{Java, Object-Oriented Programming}}{May 2024}
-          \resumeItemListStart
-            \resumeItem{Built a Java dashboard to track 3-month engagement trends across 4 influencers by implementing doubly linked lists}
-            \resumeItem{Improved test coverage and code reliability by adding 800+ lines of JUnit tests and internal documentation}
-            \resumeItem{Collaborated in a team of 4 using Git and GitHub to manage version control and streamline feature development}
-          \resumeItemListEnd
           \vspace{-13pt}
 
       \resumeProjectHeading
@@ -299,22 +222,14 @@
 
 \section{Leadership Experiences}
     \resumeSubHeadingListStart
-        \resumeSubheadingTwo
-            {Indian Students Association at Virginia Tech}{Blacksburg, VA}
+        \resumeSubheading
             {President}{May 2024 -- May 2025}
+            {Indian Students Association at Virginia Tech}{Blacksburg, VA}
             \resumeItemListStart
                 \resumeItem{Led a 30-member team to host 6+ events for 500+ attendees campus-wide by streamlining planning and execution}
                 \resumeItem{Secured \$15,000+ in funding, surpassing financial targets by 15\% through strategic sponsorship outreach and proposals}
                 \resumeItem{Improved team performance and event quality by 50\% by mentoring members in communication, planning, and execution}
-            \resumeItemListEnd
-        
-        \vspace{-4pt}
-        \resumeSubSubheading
-            {Tech-Team Coordinator}{Sep 2023 -- May 2024}
-            \resumeItemListStart
-                \resumeItem{AutomatedAutomated the ticketing system using Google AppSheet, streamlining check-in for 400+ event attendees}
-                \resumeItem{Oversaw production services at Virginia Tech for performances with 500–600 attendees, ensuring smooth operations}
-            \resumeItemListEnd
+            \resumeItemListEnd        
     \resumeSubHeadingListEnd
 
 %------------------------------------------------
