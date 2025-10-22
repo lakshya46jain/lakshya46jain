@@ -16,7 +16,8 @@
 \setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
 
-\usepackage{fontawesome}
+\usepackage{ifthen}        % for conditional logic
+\usepackage{fontawesome}  % for link icons (use fontawesome if you prefer)
 \usepackage{tgheros}
 \renewcommand{\familydefault}{\sfdefault}  % Set sans-serif as default
 \setlength{\footskip}{5pt}
@@ -83,6 +84,14 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeEducationSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeSubSubheading}[2]{
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
@@ -90,11 +99,15 @@
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
-    \vspace{-2pt}\item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
+\newcommand{\resumeProjectHeading}[4]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small{%
+      \ifthenelse{\equal{#1}{}}% Check if #1 (the URL) is empty
+        {\textbf{#2} $|$ \emph{#3}}% if empty → just print name + description
+        {\href{#1}{\underline{\textbf{#2}}~\faLink} $|$ \emph{#3}}% if not → underline + icon
+    } & \textbf{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -108,6 +121,9 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+\newcommand{\resumeItemListStartNoBullet}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeItemListEndNoBullet}{\end{itemize}\vspace{-5pt}}
+
 %-------------------------------------------
 %%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%
 
@@ -115,24 +131,22 @@
 
 \begin{center}
     \textbf{\Huge \scshape Lakshya Jain} \\ \vspace{7pt}
-    \small\href{tel:1-540-605-0261}{\faPhone\ \underline{+1 (540) 605-0261}} $|$
+    \small{\href{tel:1-540-605-0261}{\faPhone\ \underline{+1 (540) 605-0261}} $|$
     \href{mailto:lakshya46jain@gmail.com}{\faEnvelope\ \underline{lakshya46jain@gmail.com}} $|$
     \href{https://linkedin.com/in/lakshya46jain}{\faLinkedinSquare\ \underline{linkedin.com/in/lakshya46jain}} $|$
-    \href{https://github.com/lakshya46jain}{\faGithub\ \underline{github.com/lakshya46jain}}
+    \href{https://github.com/lakshya46jain}{\faGithub\ \underline{github.com/lakshya46jain}}}
     \vspace{-2.5pt}
 \end{center}
 
 \section{Education}
   \resumeSubHeadingListStart
-    \resumeSubheadingTwo
+    \resumeEducationSubheading
       {Virginia Polytechnic Institute and State University (Virginia Tech)}{Expected Graduation: May 2026}
       {Bachelor of Science (B.Sc.) in Computer Science -- Data-Centric Computing}{Blacksburg, VA}
-        \resumeItemListStart
-            \small{\item[]{\textbf{Major GPA}{: 4.00/4.00} $|$ \textbf{Overall GPA}{: 3.27/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025}}}
-            \vspace{-2pt} \\
-            \small{\item[]{\textbf{Relevant Courses}{: Software Design, Data Structures \& Algorithms, Computer Organization \& Architecture, Computer Systems, Data Analytics \& Visualization, Artificial Intelligence, Machine Learning, Database Management Systems}}}
-        \resumeItemListEnd
-  \resumeSubHeadingListEnd
+        \small{\item[]{\textbf{Major GPA}{: 4.00/4.00} $|$ \textbf{Overall GPA}{: 3.27/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025}}}
+        \vspace{-7pt} \\
+        \small{\item[]{\textbf{Relevant Courses}{: Software Design, Data Structures \& Algorithms, Computer Organization \& Architecture, Computer Systems, Data Analytics \& Visualization, Artificial Intelligence, Machine Learning, Database Management Systems}}}
+    \resumeSubHeadingListEnd
 \vspace{-16pt}
 
 \section{Experience}
@@ -141,19 +155,19 @@
       {Undergraduate Research Assistant}{Aug 2025 -- Present}
       {Virginia Tech Department of Sociology}{Blacksburg, VA}
       \resumeItemListStart
-        \resumeItem{Investigated 100+ facial recognition firms by designing open-source, reproducible data science pipelines with faculty}
+        \resumeItem{Investigated 950+ facial recognition firms by designing open-source, reproducible data science pipelines with faculty}
         \resumeItem{Developed scraping workflows with Wayback Machine to extract text, images, and metadata from live and archived sites}
-        \resumeItem{Analyzed 250+ product descriptions, press releases, and company communications using NLP to identify ethical framing}
-        \resumeItem{Built an interactive dashboard with version control to visualize trends across 100+ firms and share reproducible insights}
+        \resumeItem{Analyzed 1,100+ product descriptions, press releases, and company communications using NLP to identify ethical framing}
+        \resumeItem{Built an interactive dashboard with version control to visualize trends across 1,000+ firms and share reproducible insights}
       \resumeItemListEnd
 
     \resumeSubheading
       {Student Hiring Administrator}{Apr 2025 -- Present}
       {Virginia Tech Student Affairs}{Blacksburg, VA}
       \resumeItemListStart
-        \resumeItem{Supported the annual hiring of 3000+ student employees as part of a 5-member team, ensuring full Dining Service staffing}
+        \resumeItem{Supported the annual hiring of 3,000+ student employees as part of a 5-member team, ensuring full Dining Service staffing}
         \resumeItem{Boosted hiring efficiency by 40\% by automating manual workflows with Power Automate and digitizing forms via PowerApps}
-        \resumeItem{Analyzed 3000+ applicants using Excel to identify retention trends and building dashboards that improve visibility by 70\%}
+        \resumeItem{Analyzed 3,000+ applicants using Excel to identify retention trends and building dashboards that improve visibility by 70\%}
       \resumeItemListEnd
 
     \resumeSubheading
@@ -161,7 +175,7 @@
       {The Modern Data Company}{Palo Alto, CA (Remote)}
       \resumeItemListStart
         \resumeItem{Prototyped a Schema Drift Agent on Databricks/Delta Lake, generating PySpark/SQL via GPT-4o, cutting pipeline downtime}
-        \resumeItem{Delivered 100\% (32/32) validation via recursive struct comparison, ensuring schema evolution across complex data models}
+        \resumeItem{Delivered 100\% (32/32) validation via recursive struct comparison, ensuring schema stability across complex data models}
         \resumeItem{Streamlined ETL updates with 10+ prompt templates, turning schema changes into deterministic code for faster deployment}
         \resumeItem{Boosted drift detection accuracy (11 renames, 4 type changes) by combining flattening strategies + engineer-provided hints}
         \resumeItem{Explored Delta Lake evolution (mergeSchema, overwriteSchema, type-cast), validating schema evolution in production}
@@ -250,8 +264,23 @@
 \section{Projects}
     \vspace{-5pt}
     \resumeSubHeadingListStart
+       \resumeProjectHeading
+          {https://memora-by-bonvoy.vercel.app/}
+          {Memora by Bonvoy -- Marriott CodeFest}
+          {React.js + Vite, TypeScript, Tailwind CSS, Supabase (PostgreSQL)}
+          {Oct 2025}
+          \resumeItemListStart
+            \resumeItem{Engineered an AI-driven guest-experience prototype in 48 hours via React + OpenAI API + Supabase full-stack architecture}
+            \resumeItem{Architected a secure system with 20+ RLS policies and 49 API operations by deploying access control and edge functions}
+            \resumeItem{Leveraged research to project a $\sim$22\% uplift in Bonvoy member spending by synthesizing guest-journey workflows}
+          \resumeItemListEnd
+          \vspace{-13pt}
+
       \resumeProjectHeading
-          {\textbf{Data Science Career Dashboard} $|$ \emph{Python (Pandas, Matplotlib, NumPy, Scikit-Learn), Jupyter}}{Mar 2025 -- May 2025}
+          {https://www.github.com/lakshya46jain/data_career_dashboard/}
+          {Data Science Career Dashboard}
+          {Python (Pandas, Matplotlib, NumPy, Scikit-Learn), Jupyter}
+          {Mar 2025 -- May 2025}
           \resumeItemListStart
             \resumeItem{Exposed \$70K+ pay variance across roles/regions by modeling a pipeline with 100K+ job records, exposing pay disparities}
             \resumeItem{Identified top 10 in-demand skills from 785K+ job descriptions by via NLP techniques, pinpointing in-demand skills}
@@ -261,7 +290,10 @@
           \vspace{-13pt}
 
       \resumeProjectHeading
-          {\textbf{Real Estate Analyzer} $|$ \emph{React.js, Python (Pandas), PostgreSQL, Azure, REST API, Places API}}{Sep 2024 -- Dec 2024}
+          {https://real-estate-analyzer-iota.vercel.app/}
+          {Real Estate Analyzer}
+          {React.js, Python (Pandas), PostgreSQL, Azure, REST API, Places API}
+          {Sep 2024 -- Dec 2024}
           \resumeItemListStart
             \resumeItem{Predicted real estate prices with 97.5\% accuracy ($R^2$ = 0.9747) using a Boosted Decision Tree model, improving reliability}
             \resumeItem{Reduced MAE to \$87.9K and RMSE to \$181.8K via hyperparameter tuning and feature engineering, enhancing precision}
@@ -271,7 +303,10 @@
           \vspace{-13pt}
 
       \resumeProjectHeading
-          {\textbf{Social Media Visualizer} $|$ \emph{Java, Object-Oriented Programming}}{May 2024}
+          {}
+          {Social Media Visualizer}
+          {Java, Object-Oriented Programming}
+          {May 2024}
           \resumeItemListStart
             \resumeItem{Built a Java dashboard to track 3-month engagement trends across 4 influencers by implementing doubly linked lists}
             \resumeItem{Improved test coverage and code reliability by adding 800+ lines of JUnit tests and internal documentation}
@@ -280,7 +315,10 @@
           \vspace{-13pt}
 
       \resumeProjectHeading
-          {\textbf{Ticket Automation System} $|$ \emph{AppSheet, Google Sheets, Google Forms, Apps Script}}{Nov 2023}
+          {}
+          {Ticket Automation System}
+          {AppSheet, Google Sheets, Google Forms, Apps Script}
+          {Nov 2023}
           \resumeItemListStart
             \resumeItem{Automated check-in for 400+ event attendees by integrating AppSheet with Google Sheets and Forms for ticketing}
             \resumeItem{Enabled real-time ticket scanning by configuring AppSheet actions, improving entry flow and reducing manual work}
@@ -288,7 +326,10 @@
           \vspace{-13pt}
 
       \resumeProjectHeading
-          {\textbf{Help4You -- Cross-Platform Service Connector} $|$ \emph{Flutter, Firebase, OneSignal, REST APIs}}{Aug 2021 -- Jul 2023}
+          {https://www.github.com/lakshya46jain/help4you/}
+          {Help4You -- Cross-Platform Service Connector}
+          {Flutter, Firebase, OneSignal, REST APIs}
+          {Aug 2021 -- Jul 2023}
           \resumeItemListStart
             \resumeItem{Developed a mobile app with 15+ UI screens to streamline service booking and real-time user–provider messaging}
             \resumeItem{Architected a Firebase backend (Auth, Firestore, Storage), cutting write costs by $\sim$80\% via references and normalization}
