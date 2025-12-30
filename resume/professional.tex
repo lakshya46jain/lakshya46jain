@@ -69,14 +69,16 @@
   }
 }
 
-\newcommand{\resumeSubheading}[4]{
+\newcommand{\resumeSubheading}[4]{%
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1}{ -- }\textit{\small#3}{, }\textit{\small #4} & \textbf{\small #2} \\
+      \textbf{#1}{ -- }\textit{\small #3}%
+      \ifthenelse{\equal{#4}{}}{}{, \textit{\small #4}}%
+      & \textbf{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeSubheadingTwo}[4]{
+\newcommand{\resumeSubheadingTwo}[4]{ % Used for \resumeSubSubheading
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
@@ -103,9 +105,15 @@
   \vspace{-2pt}\item
   \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
     \small{%
-      \ifthenelse{\equal{#1}{}}% Check if #1 (the URL) is empty
-        {\textbf{#2} $|$ \emph{#3}}% if empty → just print name + description
-        {\href{#1}{\underline{\textbf{#2}}~\faLink} $|$ \emph{#3}}% if not → underline + icon
+      \ifthenelse{\equal{#1}{}}%
+        {%
+          \textbf{#2}%
+          \ifthenelse{\equal{#3}{}}{}{ $|$ \emph{#3}}%
+        }%
+        {%
+          \href{#1}{\underline{\textbf{#2}}~\faLink}%
+          \ifthenelse{\equal{#3}{}}{}{ $|$ \emph{#3}}%
+        }%
     } & \textbf{\small #4} \\
   \end{tabular*}\vspace{-7pt}
 }
@@ -139,115 +147,124 @@
 \end{center}
 
 \section{Education}
-  \resumeSubHeadingListStart
-    \resumeEducationSubheading
-      {Virginia Polytechnic Institute and State University (Virginia Tech)}{Expected Graduation: May 2026}
-      {Bachelor of Science (B.Sc.) in Computer Science -- Data-Centric Computing}{Blacksburg, VA}
-        \small{\item[]{\textbf{Major GPA}{: 4.00/4.00} $|$ \textbf{Overall GPA}{: 3.27/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025}}}
+    \resumeSubHeadingListStart
+        \resumeEducationSubheading
+            {Virginia Polytechnic Institute and State University (Virginia Tech)}
+            {Expected Graduation: May 2026}
+            {Bachelor of Science (B.Sc.) in Computer Science -- Data-Centric Computing}
+            {Blacksburg, VA}
+            \small{\item[]{\textbf{Major GPA}{: 4.00/4.00} $|$ \textbf{Overall GPA}{: 3.30/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025, Fall 2025}}}
     \resumeSubHeadingListEnd
-\vspace{-16pt}
+    \vspace{-16pt}
 
 \section{Relevant Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Data Engineering Intern}{Jun 2025 -- Aug 2025}
-      {The Modern Data Company}{Palo Alto, CA (Remote)}
-      \resumeItemListStart
-        \resumeItem{Prototyped a Schema Drift Agent on Databricks/Delta Lake, generating PySpark/SQL via GPT-4o, cutting pipeline downtime}
-        \resumeItem{Delivered 100\% (32/32) validation via recursive struct comparison, ensuring schema stability across complex data models}
-        \resumeItem{Streamlined ETL updates with 10+ prompt templates, turning schema changes into deterministic code for faster deployment}
-        \resumeItem{Boosted drift detection accuracy (11 renames, 4 type changes) by combining flattening strategies + engineer-provided hints}
-        \resumeItem{Explored Delta Lake evolution (mergeSchema, overwriteSchema, type-cast), validating schema evolution in production}
-      \resumeItemListEnd
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {Data Engineering Intern}
+            {Jun 2025 -- Aug 2025}
+            {The Modern Data Company}
+            {Palo Alto, CA (Remote)}
+            \resumeItemListStart
+                \resumeItem{Prototyped a Schema Drift Agent on Databricks/Delta Lake, generating PySpark/SQL via GPT-4o, cutting pipeline downtime}
+                \resumeItem{Delivered 100\% (32/32) validation via recursive struct comparison, ensuring schema stability across complex data models}
+                \resumeItem{Streamlined ETL updates with 10+ prompt templates, turning schema changes into deterministic code for faster deployment}
+                \resumeItem{Boosted drift detection accuracy (11 renames, 4 type changes) by combining flattening strategies + engineer-provided hints}
+                \resumeItem{Explored Delta Lake evolution (mergeSchema, overwriteSchema, type-cast), validating schema evolution in production}
+            \resumeItemListEnd
 
-    \resumeSubheading
-      {Undergraduate Research Assistant}{Aug 2025 -- Present}
-      {Virginia Tech Department of Sociology}{Blacksburg, VA}
-      \resumeItemListStart
-        \resumeItem{Investigated 950+ facial recognition firms by designing open-source, reproducible data science pipelines with faculty}
-        \resumeItem{Developed scraping workflows with Wayback Machine to extract text, images, and metadata from live and archived sites}
-        \resumeItem{Analyzed 1,100+ product descriptions, press releases, and company communications using NLP to identify ethical framing}
-        \resumeItem{Built an interactive dashboard with version control to visualize trends across 1,000+ firms and share reproducible insights}
-      \resumeItemListEnd
+        \resumeSubheading
+            {Student Hiring Administrator}
+            {Apr 2025 -- Present}
+            {Virginia Tech Student Affairs}
+            {Blacksburg, VA}
+            \resumeItemListStart
+                \resumeItem{Supported the annual hiring of 3,000+ student employees as part of a 5-member team, ensuring full Dining Service staffing}
+                \resumeItem{Boosted hiring efficiency by 40\% by automating manual workflows with Power Automate and digitizing forms via PowerApps}
+                \resumeItem{Analyzed 3,000+ applicants using Excel to identify retention trends and building dashboards that improve visibility by 70\%}
+            \resumeItemListEnd
 
-    \resumeSubheading
-      {Student Hiring Administrator}{Apr 2025 -- Present}
-      {Virginia Tech Student Affairs}{Blacksburg, VA}
-      \resumeItemListStart
-        \resumeItem{Supported the annual hiring of 3,000+ student employees as part of a 5-member team, ensuring full Dining Service staffing}
-        \resumeItem{Boosted hiring efficiency by 40\% by automating manual workflows with Power Automate and digitizing forms via PowerApps}
-        \resumeItem{Analyzed 3,000+ applicants using Excel to identify retention trends and building dashboards that improve visibility by 70\%}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-\vspace{-16pt}
+        \resumeSubheading
+            {Undergraduate Research Assistant}
+            {Aug 2025 -- Dec 2025}
+            {Virginia Tech Department of Sociology}
+            {Blacksburg, VA}
+            \resumeItemListStart
+                \resumeItem{Conducted temporal analysis of 950+ facial recognition firms via a reproducible pipeline processing 9,500+ HTML snapshots}
+                \resumeItem{Elevated signal quality via HTML cleaning, deduplication, and language + domain-specific filtering of $\sim$56,000 archived files}
+                \resumeItem{Derived 30+ discursive themes via BERTopic with transformer embeddings, UMAP reduction, and HDBSCAN clustering}
+                \resumeItem{Quantified vendor legitimacy positioning across firms at company + year levels via dictionary-based NLP framing metrics}
+                \resumeItem{Delivered scalable cross-decade vendor comparison through version-controlled visualizations and per-company analytics}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    \vspace{-16pt}
 
 \section{Technical Skills \& Certifications}
- \begin{itemize}[leftmargin=0in, label={}]
-    \small{\item{
-        \textbf{Languages}{: Python, SQL, R, Java, JavaScript, TypeScript, C, MATLAB, HTML/CSS, Dart} \\
-        \textbf{Data Science \& ML Libraries}{: NumPy, Pandas, Scikit-Learn, Matplotlib/Seaborn, SciPy} \\
-        \textbf{Data \& BI Tools}{: Databricks, Snowflake, PostgreSQL, MySQL, Firebase, Tableau, Power BI} \\
-        \textbf{Cloud Platforms}{: AWS (IAM, EC2, S3, RDS, Lambda), Microsoft Azure (ML Studio), Google Cloud Platform (GCP)} \\
-        \textbf{Other}{: Git, Github, Docker, CI/CD, Jupyter, Node.js, REST APIs, Flutter, React.js, Next.js, Figma, Adobe XD} \\
-        \textbf{Certifications}{: AWS Certified Cloud Practitioner, DataCamp Associate Data Engineer, Microsoft Azure AI Fundamentals} \\
-    }}
- \end{itemize}
-\vspace{-16pt}
-
+    \begin{itemize}[leftmargin=0in, label={}]
+        \small{\item{
+            \textbf{Languages}{: Python, SQL, R, Java, JavaScript, TypeScript, C, MATLAB, HTML/CSS, Dart} \\
+            \textbf{Data Science \& ML Libraries}{: NumPy, Pandas, Scikit-Learn, Matplotlib/Seaborn, SciPy} \\
+            \textbf{Data \& BI Tools}{: Databricks, Snowflake, PostgreSQL, MySQL, Firebase, Tableau, Power BI} \\
+            \textbf{Cloud Platforms}{: AWS (IAM, EC2, S3, RDS, Lambda), Microsoft Azure (ML Studio), Google Cloud Platform (GCP)} \\
+            \textbf{Other}{: Git, Github, Docker, CI/CD, Jupyter, Node.js, REST APIs, Flutter, React.js, Next.js, Figma, Adobe XD} \\
+            \textbf{Certifications}{: AWS Certified Cloud Practitioner, DataCamp Associate Data Engineer, Microsoft Azure AI Fundamentals} \\
+        }}
+    \end{itemize}
+    \vspace{-16pt}
+    
 \section{Projects}
     \vspace{-5pt}
     \resumeSubHeadingListStart
-       \resumeProjectHeading
-          {https://memora-by-bonvoy.vercel.app/}
-          {Memora by Bonvoy -- Marriott CodeFest}
-          {React.js + Vite, TypeScript, Tailwind CSS, Supabase (PostgreSQL)}
-          {Oct 2025}
-          \resumeItemListStart
-            \resumeItem{Engineered an AI-driven guest-experience prototype in 48 hours via React + OpenAI API + Supabase full-stack architecture}
-            \resumeItem{Architected a secure system with 20+ RLS policies and 49 API operations by deploying access control and edge functions}
-            \resumeItem{Leveraged research to project a $\sim$22\% uplift in Bonvoy member spending by synthesizing guest-journey workflows}
-          \resumeItemListEnd
-          \vspace{-13pt}
+        \resumeProjectHeading
+            {https://memora-by-bonvoy.vercel.app/}
+            {Memora by Bonvoy -- Marriott CodeFest}
+            {React.js + Vite, TypeScript, Tailwind CSS, Supabase (PostgreSQL)}
+            {Oct 2025}
+            \resumeItemListStart
+                \resumeItem{Engineered an AI-driven guest-experience prototype in 48 hours via React + OpenAI API + Supabase full-stack architecture}
+                \resumeItem{Architected a secure system with 20+ RLS policies and 49 API operations by deploying access control and edge functions}
+                \resumeItem{Leveraged research to project a $\sim$22\% uplift in Bonvoy member spending by synthesizing guest-journey workflows}
+            \resumeItemListEnd
+            \vspace{-13pt}
 
-      \resumeProjectHeading
-          {https://www.github.com/lakshya46jain/data_career_dashboard/}
-          {Data Science Career Dashboard}
-          {Python (Pandas, Matplotlib, NumPy, Scikit-Learn), Jupyter}
-          {Mar 2025 -- May 2025}
-          \resumeItemListStart
-            \resumeItem{Exposed \$70K+ pay variance across roles/regions by modeling a pipeline with 100K+ job records, exposing pay disparities}
-            \resumeItem{Identified top 10 in-demand skills from 785K+ job descriptions by via NLP techniques, pinpointing in-demand skills}
-            \resumeItem{Mapped junior-to-senior skill progression with role-specific word clouds from tokenized data, mapping role progressions}
-            \resumeItem{Clustered data roles into 4 salary-skill segments using KMeans and PCA, shaping a data-driven career dashboard}
-          \resumeItemListEnd
-          \vspace{-13pt}
+        \resumeProjectHeading
+            {https://www.github.com/lakshya46jain/data_career_dashboard/}
+            {Data Science Career Dashboard}
+            {Python (Pandas, Matplotlib, NumPy, Scikit-Learn), Jupyter}
+            {Mar 2025 -- May 2025}
+            \resumeItemListStart
+                \resumeItem{Exposed \$70K+ pay variance across roles/regions by modeling a pipeline with 100K+ job records, exposing pay disparities}
+                \resumeItem{Identified top 10 in-demand skills from 785K+ job descriptions by via NLP techniques, pinpointing in-demand skills}
+                \resumeItem{Mapped junior-to-senior skill progression with role-specific word clouds from tokenized data, mapping role progressions}
+                \resumeItem{Clustered data roles into 4 salary-skill segments using KMeans and PCA, shaping a data-driven career dashboard}
+            \resumeItemListEnd
+            \vspace{-13pt}
 
-      \resumeProjectHeading
-          {https://real-estate-analyzer-iota.vercel.app/}
-          {Real Estate Analyzer}
-          {React.js, Python (Pandas), PostgreSQL, Azure, REST API, Places API}
-          {Sep 2024 -- Dec 2024}
-          \resumeItemListStart
-            \resumeItem{Predicted real estate prices with 97.5\% accuracy ($R^2$ = 0.9747) using a Boosted Decision Tree model, improving reliability}
-            \resumeItem{Reduced MAE to \$87.9K and RMSE to \$181.8K via hyperparameter tuning and feature engineering, enhancing precision}
-            \resumeItem{Deployed model on 428K+ listings from top 10 cities across 45+ U.S. states via Azure ML Studio, scaling nationwide insights}
-            \resumeItem{Delivered a full-stack web prototype in 72 hours at VTHacks 12 by integrating the model with React.js and PostgreSQL}
-          \resumeItemListEnd 
-          \vspace{-13pt}
+        \resumeProjectHeading
+            {https://real-estate-analyzer-iota.vercel.app/}
+            {Real Estate Analyzer}
+            {React.js, Python (Pandas), PostgreSQL, Azure, REST API, Places API}
+            {Sep 2024 -- Dec 2024}
+            \resumeItemListStart
+                \resumeItem{Predicted real estate prices with 97.5\% accuracy ($R^2$ = 0.9747) using a Boosted Decision Tree model, improving reliability}
+                \resumeItem{Reduced MAE to \$87.9K and RMSE to \$181.8K via hyperparameter tuning and feature engineering, enhancing precision}
+                \resumeItem{Deployed model on 428K+ listings from top 10 cities across 45+ U.S. states via Azure ML Studio, scaling nationwide insights}
+                \resumeItem{Delivered a full-stack web prototype in 72 hours at VTHacks 12 by integrating the model with React.js and PostgreSQL}
+            \resumeItemListEnd
+            \vspace{-13pt}
 
-      \resumeProjectHeading
-          {https://www.github.com/lakshya46jain/help4you/}
-          {Help4You -- Cross-Platform Service Connector}
-          {Flutter, Firebase, OneSignal, REST APIs}
-          {Aug 2021 -- Jul 2023}
-          \resumeItemListStart
-            \resumeItem{Developed a mobile app with 15+ UI screens to streamline service booking and real-time user–provider messaging}
-            \resumeItem{Architected a Firebase backend (Auth, Firestore, Storage), cutting write costs by $\sim$80\% via references and normalization}
-            \resumeItem{Optimized chat queries to sub-100ms by structuring composite keys and message subcollections in Firestore}
-            \resumeItem{Implemented real-time sync with $<$1s latency by using Firestore snapshot listeners instead of polling}
-          \resumeItemListEnd
+        \resumeProjectHeading
+            {https://www.github.com/lakshya46jain/help4you/}
+            {Help4You -- Cross-Platform Service Connector}
+            {Flutter, Firebase, OneSignal, REST APIs}
+            {Aug 2021 -- Jul 2023}
+            \resumeItemListStart
+                \resumeItem{Developed a mobile app with 15+ UI screens to streamline service booking and real-time user–provider messaging}
+                \resumeItem{Architected a Firebase backend (Auth, Firestore, Storage), cutting write costs by $\sim$80\% via references and normalization}
+                \resumeItem{Optimized chat queries to sub-100ms by structuring composite keys and message subcollections in Firestore}
+                \resumeItem{Implemented real-time sync with $<$1s latency by using Firestore snapshot listeners instead of polling}
+            \resumeItemListEnd
     \resumeSubHeadingListEnd
-\vspace{-16pt}
+    \vspace{-16pt}
 
 \section{Leadership Experiences}
     \resumeSubHeadingListStart
@@ -257,7 +274,7 @@
             \resumeItemListStart
                 \resumeItem{Led a 30-member team to host 6+ events for 500+ attendees campus-wide by streamlining planning and execution}
                 \resumeItem{Secured \$15,000+ in funding, surpassing financial targets by 15\% through strategic sponsorship outreach and proposals}
-                \resumeItem{Improved team performance and event quality by 50\% by mentoring members in communication, planning, and execution}
+                \resumeItem{Improved team performance and event quality by 50\% by mentoring members in communication, planning, and team-work}
             \resumeItemListEnd        
     \resumeSubHeadingListEnd
 
