@@ -1,0 +1,281 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\usepackage{ifthen} % for conditional logic
+\usepackage{fontawesome} % for link icons (use fontawesome if you prefer)
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault} % Set sans-serif as default
+\setlength{\footskip}{5pt}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.665in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.455in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \color{black}\vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1}{ -- }\textit{\small #3}%
+      \ifthenelse{\equal{#4}{}}{}{, \textit{\small #4}}%
+      & \textbf{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingTwo}[4]{ % Used for \resumeSubSubheading
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeEducationSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[4]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small{%
+      \ifthenelse{\equal{#1}{}}%
+        {%
+          \textbf{#2}%
+          \ifthenelse{\equal{#3}{}}{}{ $|$ \emph{#3}}%
+        }%
+        {%
+          \href{#1}{\underline{\textbf{#2}}~\faLink}%
+          \ifthenelse{\equal{#3}{}}{}{ $|$ \emph{#3}}%
+        }%
+    } & \textbf{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\resumeItemListStartNoBullet}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeItemListEndNoBullet}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Lakshya Jain} \\ \vspace{7pt}
+    \small{\href{tel:1-540-605-0261}{\faPhone\ \underline{+1 (540) 605-0261}} $|$
+    \href{mailto:lakshya46jain@gmail.com}{\faEnvelope\ \underline{lakshya46jain@gmail.com}} $|$
+    \href{https://linkedin.com/in/lakshya46jain}{\faLinkedinSquare\ \underline{linkedin.com/in/lakshya46jain}} $|$
+    \href{https://github.com/lakshya46jain}{\faGithub\ \underline{github.com/lakshya46jain}}}
+    \vspace{-2.5pt}
+\end{center}
+
+\section{Education}
+    \resumeSubHeadingListStart
+        \resumeEducationSubheading
+            {Virginia Polytechnic Institute and State University (Virginia Tech)}
+            {Expected Graduation: May 2026}
+            {Bachelor of Science (B.Sc.) in Computer Science -- Data-Centric Computing}
+            {Blacksburg, VA}
+            \small{\item[]{\textbf{Major GPA}{: 4.00/4.00} $|$ \textbf{Overall GPA}{: 3.30/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025, Fall 2025}}}
+    \resumeSubHeadingListEnd
+    \vspace{-16pt}
+
+\section{Relevant Experience}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {Data Engineering Intern}
+            {Jun 2025 -- Aug 2025}
+            {The Modern Data Company}
+            {Palo Alto, CA (Remote)}
+            \resumeItemListStart
+                \resumeItem{\textbf{Reduced pipeline downtime} by automating schema drift resolution with a Delta Lake GenAI agent producing PySpark/SQL}
+                \resumeItem{\textbf{Established} production \textbf{schema stability}, achieving \textbf{100\% (32/32)} validation via recursive comparison across data models}
+                \resumeItem{\textbf{Accelerated ETL updates}, converting schema changes into deterministic, deployment-ready code via \textbf{10+} prompt template}
+                \resumeItem{\textbf{Boosted} drift detection \textbf{accuracy} (11 renames, 4 type changes) by combining flattening strategies + engineer-provided hints}
+            \resumeItemListEnd
+
+        \resumeSubheading
+            {Undergraduate Research Assistant}
+            {Aug 2025 -- Dec 2025}
+            {Virginia Tech Department of Sociology}
+            {Blacksburg, VA}
+            \resumeItemListStart
+                \resumeItem{Conducted temporal analysis of \textbf{950+} facial recognition firms via a reproducible pipeline processing 9,500+ HTML snapshots}
+                \resumeItem{Elevated signal quality via HTML cleaning, deduplication, and language + domain-specific filtering of \textbf{$\sim$56,000 archived files}}
+                \resumeItem{Derived \textbf{30+ discursive themes} via BERTopic with transformer embeddings, UMAP reduction, and HDBSCAN clustering}
+                \resumeItem{Quantified vendor legitimacy positioning across firms at company + year levels via dictionary-based NLP framing metrics}
+                \resumeItem{Delivered scalable cross-decade vendor comparison through version-controlled visualizations and per-company analytics}
+            \resumeItemListEnd
+
+        \resumeSubheading
+            {Student Hiring Administrator}
+            {Apr 2025 -- Present}
+            {Virginia Tech Student Affairs}
+            {Blacksburg, VA}
+            \resumeItemListStart
+                \resumeItem{Supported the annual hiring of 3,000+ student employees as part of a 5-member team, ensuring full Dining Service staffing}
+                \resumeItem{Boosted hiring efficiency by 40\% by automating manual workflows with Power Automate and digitizing forms via PowerApps}
+                \resumeItem{Analyzed 3,000+ applicants using Excel to identify retention trends and building dashboards that \textbf{improve visibility by 70\%}}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    \vspace{-16pt}
+
+\section{Technical Skills \& Certifications}
+    \begin{itemize}[leftmargin=0in, label={}]
+        \small{\item{
+            \textbf{Languages}{: Python, SQL, R, Java, JavaScript, TypeScript, C, MATLAB, HTML/CSS, Dart} \\
+            \textbf{Data Science \& ML Libraries}{: NumPy, Pandas, Scikit-Learn, Matplotlib/Seaborn, SciPy} \\
+            \textbf{Data \& BI Tools}{: Databricks, Snowflake, PostgreSQL, MySQL, Firebase, Tableau, Power BI} \\
+            \textbf{Cloud Platforms}{: AWS (IAM, EC2, S3, RDS, Lambda), Microsoft Azure (ML Studio), Google Cloud Platform (GCP)} \\
+            \textbf{Other}{: Git, Github, Docker, CI/CD, Jupyter, Node.js, REST APIs, Flutter, React.js, Next.js, Figma, Adobe XD} \\
+            \textbf{Certifications}{: AWS Certified Cloud + AI Practitioner, DataCamp Associate Data Engineer, Microsoft Azure AI Fundamentals, ServiceNow Certified System Administrator (Pursuing), Six Sigma White Belt (Pursuing)} \\
+        }}
+    \end{itemize}
+    \vspace{-16pt}
+    
+\section{Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+        \resumeProjectHeading
+            {https://memora-by-bonvoy.vercel.app/}
+            {Memora by Bonvoy -- Marriott CodeFest}
+            {React.js + Vite, TypeScript, Tailwind CSS, Supabase (PostgreSQL)}
+            {Oct 2025}
+            \resumeItemListStart
+                \resumeItem{Engineered an \textbf{AI-driven} guest-experience prototype in \textbf{48 hours} via React + OpenAI API + Supabase full-stack architecture}
+                \resumeItem{Architected a \textbf{secure system} with \textbf{20+ RLS policies} and \textbf{49 API operations} by deploying access control \& edge functions}
+                \resumeItem{Leveraged research to \textbf{project a $\sim$22\% uplift in Bonvoy member spending} by synthesizing guest-journey workflows}
+            \resumeItemListEnd
+            \vspace{-13pt}
+
+        \resumeProjectHeading
+            {https://www.github.com/lakshya46jain/data_career_dashboard/}
+            {Data Science Career Dashboard}
+            {Python (Pandas, Matplotlib, NumPy, Scikit-Learn), Jupyter}
+            {Mar 2025 -- May 2025}
+            \resumeItemListStart
+                \resumeItem{Exposed \textbf{\$70K+ pay variance} across roles and regions by modeling a pipeline with 100K+ job records}
+                \resumeItem{Identified top 10 in-demand skills from \textbf{785K+ job descriptions} using \textbf{NLP techniques}}
+                \resumeItem{Mapped junior-to-senior \textbf{skill progression} with role-specific word clouds from tokenized data}
+                \resumeItem{Segmented data roles into 4 salary-skill segments using KMeans and PCA to inform a data-driven career dashboard}
+            \resumeItemListEnd
+            \vspace{-13pt}
+
+        \resumeProjectHeading
+            {https://real-estate-analyzer-iota.vercel.app/}
+            {Real Estate Analyzer}
+            {React.js, Python (Pandas), PostgreSQL, Azure, REST API, Places API}
+            {Sep 2024 -- Dec 2024}
+            \resumeItemListStart
+                \resumeItem{\textbf{Predicted real estate prices with 97.5\% accuracy} ($R^2$ = 0.975) using a Boosted Decision Tree model, improving reliability}
+                \resumeItem{Reduced MAE to \textbf{\$87.9K} and RMSE to \textbf{\$181.8K} via hyperparameter tuning and feature engineering, enhancing precision}
+                \resumeItem{Deployed model on 428K+ listings from top 10 cities across 45+ U.S. states via Azure ML Studio, scaling nationwide insights}
+                \resumeItem{Delivered a \textbf{full-stack web prototype} in \textbf{72 hours} at VTHacks 12 by integrating the model with React.js and PostgreSQL}
+            \resumeItemListEnd
+            \vspace{-13pt}
+
+        \resumeProjectHeading
+            {https://www.github.com/lakshya46jain/help4you/}
+            {Help4You -- Cross-Platform Service Connector}
+            {Flutter, Firebase, OneSignal, REST APIs}
+            {Aug 2021 -- Jul 2023}
+            \resumeItemListStart
+                \resumeItem{Developed a mobile app with 15+ UI screens to streamline service booking and real-time user–provider messaging}
+                \resumeItem{Architected a Firebase backend (Auth, Firestore, Storage), \textbf{cutting write costs by $\sim$80\%} via references and normalization}
+                \resumeItem{\textbf{Optimized} chat \textbf{queries to sub-100ms} by structuring composite keys and message subcollections in Firestore}
+                \resumeItem{Implemented \textbf{real-time sync with $<$1s latency} by using Firestore snapshot listeners instead of polling}
+            \resumeItemListEnd
+    \resumeSubHeadingListEnd
+    \vspace{-16pt}
+
+\section{Leadership Experiences}
+    \resumeSubHeadingListStart
+        \resumeSubheading
+            {President}{May 2024 -- May 2025}
+            {Indian Students Association at Virginia Tech}{Blacksburg, VA}
+            \resumeItemListStart
+                \resumeItem{Led a 30-member team to host 6+ events for 500+ attendees campus-wide by streamlining planning and execution}
+                \resumeItem{Secured \textbf{\$15,000+ in funding}, \textbf{surpassing financial targets by 15\%} through strategic sponsorship outreach and proposals}
+                \resumeItem{Improved \textbf{team performance} and \textbf{event quality} by \textbf{50\%} by mentoring members in communication, planning, and teamwork}
+            \resumeItemListEnd        
+    \resumeSubHeadingListEnd
+
+%------------------------------------------------
+\end{document}
