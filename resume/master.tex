@@ -11,47 +11,27 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{fontawesome5}
 \usepackage{multicol}
 \setlength{\multicolsep}{-3.0pt}
 \setlength{\columnsep}{-1pt}
 \input{glyphtounicode}
 
-\usepackage{ifthen}        % for conditional logic
-\usepackage{fontawesome}  % for link icons (use fontawesome if you prefer)
-\usepackage{tgheros}
-\renewcommand{\familydefault}{\sfdefault}  % Set sans-serif as default
-\setlength{\footskip}{5pt}
-
-%----------FONT OPTIONS----------
-% sans-serif
-% \usepackage[sfdefault]{FiraSans}
-% \usepackage[sfdefault]{roboto}
-% \usepackage[sfdefault]{noto-sans}
-% \usepackage[default]{sourcesanspro}
-
-% serif
-% \usepackage{CormorantGaramond}
-% \usepackage{charter}
-
-
 \pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
+\fancyhf{}
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.665in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1.455in}
-\addtolength{\topmargin}{-0.7in}
-\addtolength{\textheight}{1.4in}
+\usepackage[margin=0.30in]{geometry}
 
 \urlstyle{same}
-
 \raggedbottom
 \raggedright
 \setlength{\tabcolsep}{0in}
+
+\usepackage{ifthen} % for conditional logic
 
 % Sections formatting
 \titleformat{\section}{
@@ -64,9 +44,7 @@
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
+  \item\small{{#1 \vspace{-2pt}}}
 }
 
 \newcommand{\resumeSubheading}[4]{%
@@ -86,18 +64,18 @@
     \end{tabular*}\vspace{-7pt}
 }
 
+\newcommand{\resumeSubSubheading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
 \newcommand{\resumeEducationSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textbf{\small #2} \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -138,38 +116,48 @@
 \begin{document}
 
 \begin{center}
-    \textbf{\Huge \scshape Lakshya Jain} \\ \vspace{7pt}
-    \small{\href{tel:1-540-605-0261}{\faPhone\ \underline{+1 (540) 605-0261}} $|$
-    \href{mailto:lakshya46jain@gmail.com}{\faEnvelope\ \underline{lakshya46jain@gmail.com}} $|$
-    \href{https://linkedin.com/in/lakshya46jain}{\faLinkedinSquare\ \underline{linkedin.com/in/lakshya46jain}} $|$
-    \href{https://github.com/lakshya46jain}{\faGithub\ \underline{github.com/lakshya46jain}}}
+    \textbf{\Huge \scshape Lakshya Jain} \\ \vspace{7.5pt}
+    \small{
+        \href{tel:1-540-605-0261}{\faPhone\ \underline{+1 (540) 605-0261}} ~
+        \href{mailto:lakshya46jain@gmail.com}{\faEnvelope\ \underline{lakshya46jain@gmail.com}} ~
+        \href{https://linkedin.com/in/lakshya46jain}{\faLinkedin\ \underline{linkedin.com/in/lakshya46jain}} ~
+        \href{https://github.com/lakshya46jain}{\faGithub\ \underline{github.com/lakshya46jain}}
+        }
     \vspace{-2.5pt}
 \end{center}
 
 \section{Education}
     \resumeSubHeadingListStart
+    
         \resumeEducationSubheading
-            {Virginia Polytechnic Institute and State University (Virginia Tech)}
-            {Expected Graduation: May 2026}
+            {Virginia Tech, College of Engineering}
+            {Graduated: May 2026}
             {Bachelor of Science (B.Sc.) in Computer Science -- Data-Centric Computing}
             {Blacksburg, VA}
-            \small{\item[]{\textbf{Major GPA}{: 4.00/4.00} $|$ \textbf{Overall GPA}{: 3.30/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025, Fall 2025}}}
+            \small{\item[]{\textbf{Distinction}{: Cum Laude}}}
             \vspace{-7pt}
-            \small{\item[]{\textbf{Relevant Courses}{: Software Design, Data Structures \& Algorithms, Computer Organization \& Architecture, Computer Systems, Data Analytics \& Visualization, Artificial Intelligence, Machine Learning, Database Management Systems}}}
+            \small{\item[]{\textbf{Major GPA}{: 3.84/4.00} $|$ \textbf{Overall GPA}{: 3.43/4.00} $|$ \textbf{Dean's List}{: Spring 2024, Spring 2025, Fall 2025, Spring 2026}}}
+            \vspace{-7pt}
+            \small{\item[]{\textbf{Relevant Courses}{: Data Structures \& Algorithms, Software Design, Computer Systems, Database Management Systems, Artificial Intelligence, Machine Learning, Cloud Software Development, Cybersecurity Analytics, Data Analytics \& Visualization}}}
+            
     \resumeSubHeadingListEnd
-    \vspace{-16pt}
 
 \section{Experience}
     \resumeSubHeadingListStart
+    
         \resumeSubheading
             {Student Hiring Administrator}
             {Apr 2025 -- Present}
             {Virginia Tech Student Affairs}
             {Blacksburg, VA}
             \resumeItemListStart
-                \resumeItem{Supported the annual hiring of 3,000+ student employees as part of a 5-member team, ensuring full Dining Service staffing}
-                \resumeItem{Boosted hiring efficiency by 40\% by automating manual workflows with Power Automate and digitizing forms via PowerApps}
-                \resumeItem{Analyzed 3,000+ applicants using Excel to identify retention trends and building dashboards that improve visibility by 70\%}
+                \resumeItem{Spearheaded end-to-end digital transformation of student hiring, onboarding, waitlist, and workforce documentation systems supporting 3,000+ annual student hires across a large-scale dining operation.}
+                \resumeItem{Architected Power Automate pipelines automating Docusign verification, folder creation, Teams routing, validation, and exception handling --- cutting per-applicant processing time by ${\sim}$90\% and saving 550--900+ administrative hours annually.}
+                \resumeItem{Engineered a waitlist automation system integrating Active Directory, Office Scripts, and SharePoint --- reducing applicant processing time by ${\sim}$85--92\% through auto-standardized availability formatting and automated record population.}
+                \resumeItem{Built executive Power BI dashboards with DAX, ETL pipelines, and seasonal adjustment logic --- delivering real-time visibility into workforce retention (70--80\% avg.), hiring distribution, and labor utilization analytics, replacing manual spreadsheet reporting and informing multi-million-dollar labor budget decisions.}
+                \resumeItem{Rebuilt SharePoint hiring infrastructure from scratch with custom Lists, workflow logic, and validation rules --- standardizing operations across all dining units and eliminating legacy process bottlenecks.}
+                \resumeItem{Led Docusign digitization of disciplinary workflows --- designing role-based signing chains, approval systems, access governance, and SOPs that transitioned the department to centralized digital-first recordkeeping.}
+                \resumeItem{Managed I-9 verifications and position screening calls for 3,000+ hires while overseeing all above initiatives under FERPA compliance, ensuring responsible handling of sensitive workforce data throughout high-volume hiring cycles.}
             \resumeItemListEnd
 
         \resumeSubheading
@@ -178,11 +166,11 @@
             {Virginia Tech Department of Sociology}
             {Blacksburg, VA}
             \resumeItemListStart
-                \resumeItem{Conducted temporal analysis of 950+ facial recognition firms via a reproducible pipeline processing 9,500+ HTML snapshots}
-                \resumeItem{Elevated signal quality via HTML cleaning, deduplication, and language + domain-specific filtering of $\sim$56,000 archived files}
-                \resumeItem{Derived 30+ discursive themes via BERTopic with transformer embeddings, UMAP reduction, and HDBSCAN clustering}
-                \resumeItem{Quantified vendor legitimacy positioning across firms at company + year levels via dictionary-based NLP framing metrics}
-                \resumeItem{Delivered scalable cross-decade vendor comparison through version-controlled visualizations and per-company analytics}
+                \resumeItem{Equipped regulators and procurement teams with quantified vendor messaging profiles across 487 facial recognition firms, measured by 3 normalized framing scores (ethical, surveillance, market) per company $\times$ year, by building a dictionary-based NLP framing classifier in Python over 9,994 documents}
+                \resumeItem{Revealed that of 487 profiled vendors, 228 foreground commercial positioning, 130 emphasize ethical language, and 51 foreground surveillance narratives (at $\geq$0.5 framing threshold), delivering actionable market-segmentation and regulatory-risk intelligence for procurement and investment teams}
+                \resumeItem{Accelerated vendor due-diligence from manual review to automated scoring across 487 firms, measured by per-company topic profiles, framing timelines, and sourced excerpts, by engineering a 7-stage modular pipeline (scrape $\rightarrow$ clean $\rightarrow$ embed $\rightarrow$ model $\rightarrow$ profile $\rightarrow$ visualize) in Python}
+                \resumeItem{Identified 40+ latent market and policy discourse themes across 3 decades of vendor content, validated via intertopic distance maps and manual spot-checks, by applying BERTopic with transformer embeddings, UMAP reduction, and HDBSCAN clustering on 9,994 documents}
+                \resumeItem{Unlocked downstream ML modeling and framing analysis on a 9,994-document corpus by distilling 56,292 raw Wayback Machine HTML snapshots through a multi-stage cleaning pipeline using BeautifulSoup, langdetect, and custom deduplication logic across 487 vendors}
             \resumeItemListEnd
 
         \resumeSubheading
@@ -191,17 +179,20 @@
             {The Modern Data Company}
             {Palo Alto, CA (Remote)}
             \resumeItemListStart
-                \resumeItem{Prototyped a Schema Drift Agent on Databricks/Delta Lake, generating PySpark/SQL via GPT-4o, cutting pipeline downtime}
-                \resumeItem{Delivered 100\% (32/32) validation via recursive struct comparison, ensuring schema stability across complex data models}
-                \resumeItem{Streamlined ETL updates with 10+ prompt templates, turning schema changes into deterministic code for faster deployment}
-                \resumeItem{Boosted drift detection accuracy (11 renames, 4 type changes) by combining flattening strategies + engineer-provided hints}
-                \resumeItem{Explored Delta Lake evolution (mergeSchema, overwriteSchema, type-cast), validating schema evolution in production}
+                \resumeItem{Architected an end-to-end Schema Drift Agent on Databricks/Delta Lake — detecting schema drift in real time and auto-generating GPT-4o-powered PySpark/SQL fixes — reducing pipeline downtime risk for data teams supporting BI reporting and Reverse ETL workflows}
+                \resumeItem{Engineered a recursive struct comparison engine using dot-notation path tracking to detect added, removed, renamed, and type-changed fields across arbitrarily nested Delta Lake schemas, achieving 100\% validation coverage across 32 test cases}
+                \resumeItem{Designed 10+ production-grade prompt templates in a 9-part schematic format and a modular rendering pipeline with template-based routing, turning schema diffs into deterministic, review-ready PySpark/SQL with enforced output contracts and safety guardrails}
+                \resumeItem{Boosted rename detection precision across 11 rename and 4 type-cast scenarios by diagnosing and replacing faulty heuristic logic with hint-guided flattening strategies, documenting limitations and future scope against industry practices}
+                \resumeItem{Validated Delta Lake schema evolution strategies and Auto Loader drift modes against real platform enforcement constraints, including a rescue-mode prompt template for field recovery from malformed ingestion records}
+                \resumeItem{Applied EDA, composite key design, OLAP concepts, and customer segmentation frameworks including RFM analysis and North Star Metrics on a real Lakehouse dataset spanning 4 joined tables to formulate a regional revenue and volume business problem}
+                \resumeItem{Researched data platform observability KPIs — throughput, tail latency, error rates, session metrics, and retention — metric governance platforms, and Text-to-SQL architectures while evaluating project directions across Snowflake vs.\ Databricks, Lakehouse vs.\ Warehouse vs.\ Vector Stores, DataOS, and modern AI-native software paradigms}
+                \resumeItem{Deepened data engineering fluency across Spark vs.\ Hadoop trade-offs, table partitioning, clustering, bucketing, advanced SQL pattern recognition, and multi-agent AI orchestration}
             \resumeItemListEnd
 
         \resumeSubheading
             {Undergraduate Grading Assistant}
             {Sep 2024 -- Apr 2025}
-            {Virginia Tech Dept. of Engineering Education}
+            {Virginia Tech Dept. of Engineering}
             {Blacksburg, VA}
             \resumeItemListStart
                 \resumeItem{Evaluated coursework for 140+ students in ENGE 1215/1216, ensuring fair and consistent grading standards}
@@ -220,97 +211,125 @@
             \resumeItemListEnd
 
         \resumeSubheading
-            {Undergraduate Research Assistant}
-            {Sep 2024 -- Feb 2025}
-            {Virginia Tech Dept. of Computer Science}
-            {Blacksburg, VA}
-            \resumeItemListStart
-                \resumeItem{Assisted in research on game-based learning to improved cybersecurity awareness among children aged 8-12}
-                \resumeItem{Contributed to early-stage ideation for a privacy-focused game exploring ways to increase children's engagement}
-            \resumeItemListEnd
-
-        \resumeSubheading
-            {Junior Software Developer}
-            {Jun 2023 -- Aug 2023}
-            {Upgrid Creative}
-            {Remote}
-            \resumeItemListStart
-                \resumeItem{Developed a Flutter front-end with 13+ active screens for a responsive cross-platform restaurant app}
-                \resumeItem{Redesigned the user interface for improved usability demoing to 5+ clients for feedback and iteration}
-                \resumeItem{Collaborated in a 4-member team to streamline development workflows and improve design-to-code handoff}
-            \resumeItemListEnd
-
-        \resumeSubheading
             {Part-Time Intern}
             {Dec 2021 -- Jan 2022}
             {Mindler}
             {Remote}
             \resumeItemListStart
                 \resumeItem{Completed structured masterclasses to strengthen leadership, entrepreneurial thinking, and project management skills}
-            \resumeItemListEnd      
+            \resumeItemListEnd
+            
   \resumeSubHeadingListEnd
-    \vspace{-16pt}
 
 \section{Technical Skills}
     \begin{itemize}[leftmargin=0in, label={}]
         \small{\item{
-            \textbf{Languages}{: Python, SQL, R, Java, JavaScript, TypeScript, C, MATLAB, HTML/CSS, Dart} \\
-            \textbf{Data Science \& ML Libraries}{: NumPy, Pandas, Scikit-Learn, Matplotlib/Seaborn, SciPy} \\
+            \textbf{Languages}{: Python, SQL, R, Java, JavaScript, TypeScript, MATLAB, HTML/CSS, Dart} \\
+            \textbf{Data Science \& ML Libraries}{: PyTorch, NumPy, Pandas, Scikit-Learn, Matplotlib/Seaborn, SciPy} \\
             \textbf{Data \& BI Tools}{: Databricks, Snowflake, PostgreSQL, MySQL, Firebase, Tableau, Power BI} \\
             \textbf{Cloud Platforms}{: AWS (IAM, EC2, S3, RDS, Lambda), Microsoft Azure (ML Studio), Google Cloud Platform (GCP)} \\
-            \textbf{Other}{: Git, Github, Docker, CI/CD, Jupyter, Node.js, REST APIs, Flutter, React.js, Next.js, Figma, Adobe XD} \\
+            \textbf{Other}{: Git, Github, Docker, CI/CD, Jupyter, REST APIs, Flutter, React.js, Figma, Adobe XD} \\
         }}
     \end{itemize}
-    \vspace{-16pt}
     
-\newpage
 \section{Certifications}
     \setlength{\columnsep}{-10pt}
     \begin{multicols}{3}
         \begin{itemize}[itemsep=-2.5pt, parsep=2.5pt]
             \small
-            \item{\href{https://www.credly.com/badges/6f61813a-20f7-4b96-a6f5-57c9b959f4f9/public_url}{AWS Certified Cloud Practitioner}}
-            \item{\href{https://www.datacamp.com/certificate/DEA0011165135933}{DataCamp Associate Data Engineer}}
-            \item{\href{https://cs50.harvard.edu/certificates/8907c732-791d-40c1-93ab-71bf66c02c63}{Harvard CS50 Python Programming}}
-            \item{\href{https://www.futurelearn.com/certificates/09u23j2}{Accenture User Experience}}
-            \item{\href{https://www.credly.com/badges/77105366-fd71-42b8-947e-4a97a040f79a/public_url}{Microsoft Azure AI Fundamentals}}
-            \item{\href{https://www.credly.com/badges/255a3c80-3931-41f3-a273-0f1e731d4d6f/public_url}{IBM Enterprise Design Thinking}}
-            \item{\href{https://www.credly.com/badges/d38723c4-cff4-4558-b9e6-a8fa47048195/public_url}{IBM Internet of Things Intro}}
-            \item{\href{https://www.credly.com/badges/5e4dd9d6-c2f1-43d5-ade0-91ac1687624c/public_url}{IBM Artificial Intelligence Intro}}
-            \item{\href{https://www.credly.com/badges/76a78578-5add-46d6-a04d-a45d07880a61/public_url}{IBM Build Your Own Chat-Bot}}
-            \item{\href{https://www.credly.com/badges/366d28af-bd8b-4d66-8e88-3642ce1530a1/public_url}{IBM Cloud Intro}}
-            \item{\href{https://www.credly.com/badges/ffc25c4c-bc60-44bf-b17b-7a2024f6f05b/public_url}{IBM Quantum Computing Intro}}
-            \item{\href{https://www.credly.com/badges/065dba2a-90db-4b89-83e4-58d26c26a80c/public_url}{IBM Coding Intro}}
+            \item{\href{https://www.credly.com/badges/9f0969dd-abdb-4bef-a715-0381be726772/public_url}{AWS Certified AI Practitioner (2026)}}
+            \item{\href{https://www.credly.com/badges/6f61813a-20f7-4b96-a6f5-57c9b959f4f9/public_url}{AWS Certified Cloud Practitioner (2025)}}
+            \item{\href{https://www.datacamp.com/certificate/DEA0011165135933}{DataCamp Data Engineer Associate (2025)}}
+            \item{\href{https://cs50.harvard.edu/certificates/8907c732-791d-40c1-93ab-71bf66c02c63}{Harvard CS50 Python Programming (2024)}}
+            \item{\href{https://www.futurelearn.com/certificates/09u23j2}{Accenture User Experience (2024)}}
+            \item{\href{https://www.credly.com/badges/77105366-fd71-42b8-947e-4a97a040f79a/public_url}{Microsoft Azure AI Fundamentals (2022)}}
+            \item{\href{https://www.credly.com/badges/255a3c80-3931-41f3-a273-0f1e731d4d6f/public_url}{IBM Enterprise Design Thinking (2020)}}
+            \item{\href{https://www.credly.com/badges/d38723c4-cff4-4558-b9e6-a8fa47048195/public_url}{IBM Internet of Things Intro (2020)}}
+            \item{\href{https://www.credly.com/badges/5e4dd9d6-c2f1-43d5-ade0-91ac1687624c/public_url}{IBM Artificial Intelligence Intro (2020)}}
+            \item{\href{https://www.credly.com/badges/76a78578-5add-46d6-a04d-a45d07880a61/public_url}{IBM Build Your Own Chat-Bot (2020)}}
+            \item{\href{https://www.credly.com/badges/366d28af-bd8b-4d66-8e88-3642ce1530a1/public_url}{IBM Cloud Intro (2020)}}
+            \item{\href{https://www.credly.com/badges/ffc25c4c-bc60-44bf-b17b-7a2024f6f05b/public_url}{IBM Quantum Computing Intro (2020)}}
+            \item{\href{https://www.credly.com/badges/065dba2a-90db-4b89-83e4-58d26c26a80c/public_url}{IBM Coding Intro (2020)}}
         \end{itemize}
     \end{multicols}
     \vspace*{2.0\multicolsep}
 
 \section{Projects}
-    \vspace{-5pt}
     \resumeSubHeadingListStart
+    
         \resumeProjectHeading
-            {}
+            {https://www.github.com/lakshya46jain/empirical-link-prediction-study/}
+            {Empirical Link Prediction Study in Healthcare}
+            {Python (SciPy, Scikit-Learn, PyTorch)}
+            {Jan 2026 - May 2026}
+            \resumeItemListStart
+                \resumeItem{Mapped a real-world hospital contact network of 9,424 individuals — 5,904 healthcare workers and 3,519 patients — across 77,629 clinical interactions, achieving a top MAP@3 of 0.0566 to surface unobserved exposure patterns critical to infection control and patient safety}
+                \resumeItem{Built an end-to-end data pipeline in Python, pandas, and NetworkX — covering ingestion, feature construction, versioned train/validation splits, and graph-ready outputs — that supported all 7 model experiments across a 77,629-edge clinical graph with zero redundant preprocessing, using reusable cached artifacts and a structured Jupyter notebook workflow spanning raw exploration through final evaluation}
+                \resumeItem{Benchmarked 7 link prediction methods — Common Neighbors, Jaccard, Adamic-Adar, Preferential Attachment, unsupervised Node2Vec, supervised MLP scoring (BCE + BPR), and a relation-aware R-GCN — against a shared MAP@3 framework on a 9,424-node heterogeneous clinical graph, reaching a top score of 0.0566}
+                \resumeItem{Improved link ranking performance 4× over the unsupervised Node2Vec baseline (MAP@3 0.0405 vs 0.0104) by replacing dot-product similarity with supervised MLP scoring heads trained with Binary Cross-Entropy and Bayesian Personalized Ranking objectives on the same graph embeddings}
+                \resumeItem{Delivered a data-driven recommendation on ML investment vs. interpretable methods by quantifying the cost-performance gap across all 7 approaches — finding classical Adamic-Adar (MAP@3 0.0566) outperformed all 6 competing methods including the relation-aware R-GCN, providing evidence of when advanced graph learning adds measurable clinical value}
+                \resumeItem{Generated operational insights scalable to hospital systems managing 10,000–200,000+ individuals — demonstrating that low-overhead structural graph methods sustain strong predictive performance at 10×–20× the study dataset size, reducing computational cost while supporting contact tracing, exposure discovery, and infection prevention programs}
+            \resumeItemListEnd
+        \vspace{-10pt}
+
+        \resumeProjectHeading
+            {https://poker-player-profiling.vercel.app/}
+            {Poker Player Profiling}
+            {Python (Scikit-Learn, Matplotlib, Seaborn), Jupyter}
+            {Mar 2026 - May 2026}
+            \resumeItemListStart
+                \resumeItem{Engineered an end-to-end unsupervised ML behavioral segmentation pipeline on 19.58M real-world Texas Hold'em hand records, profiling 16,439 players across 3 channels, with direct applications in gaming analytics, user profiling, fraud detection, and recommendation systems}
+                \resumeItem{Achieved a 3.3x improvement in cluster cohesion (silhouette score 0.4420 vs. baseline 0.1347) by replacing traditional VPIP/PFR heuristic labels with K-Means clustering (K=2--8), applying StandardScaler normalization, and selecting optimal K via elbow analysis and silhouette scoring}
+                \resumeItem{Exposed critical failure of rule-based classification where 93.5\% of players collapsed into just 2 archetypes and TAG captured only 32 players, by cross-tabulating heuristic labels against K-Means clusters, revealing severe class imbalance and motivating scalable, unbiased behavioral analytics}
+                \resumeItem{Discovered 4 interpretable behavioral personas — Conservative (8,542), Loose-Passive (4,838), Moderately Aggressive (2,337), and Hyper-Aggressive (722) — by analyzing cluster centroids, uncovering hidden aggression subgroups within broad LAG labels with applications in opponent modeling, game AI, and player retention}
+                \resumeItem{Identified tight vs. loose play as the strongest natural behavioral signal (K=2 silhouette: 0.4917), by benchmarking all K configurations, with broader applicability to customer segmentation, risk profiling, and behavioral pattern recognition}
+                \resumeItem{Built a reproducible data engineering pipeline parsing tens of thousands of raw hand-history logs into structured CSV datasets, engineering 6 player-level features (VPIP, PFR, total hands, aggression gap, channels played, months active), and enforcing a 30-hand minimum filter to ensure data integrity at scale}
+            \resumeItemListEnd
+        \vspace{-10pt}
+
+        \resumeProjectHeading
+            {https://my-spot-omega.vercel.app/}
+            {MySpot}
+            {React + Vite, TypeScript, Tailwind CSS, MySQL, Firebase (Storage), Google Maps API}
+            {Jan 2026 - Apr 2026}
+            \resumeItemListStart
+                \resumeItem{Delivered a production-grade, data-driven study spot discovery platform targeting 30,000+ Virginia Tech students, reducing study location scouting time by an estimated 5+ hrs/week by centralizing crowdsourced geospatial data, community reviews, and real-time search into a single deployed application}
+                \resumeItem{Architected a normalized 10-table relational MySQL schema with complex foreign key constraints, soft-delete audit trails, and multi-tier role hierarchies, enabling structured data pipelines across 16 curated locations, 40+ reviews, and 12 tracked spot attributes}
+                \resumeItem{Engineered a dynamic attribute data model for admin-configurable spot properties (Wi-Fi, noise level, power outlets, seating capacity, accessibility ratings) without schema changes, improving data extensibility and enabling downstream analytics on student preference patterns}
+                \resumeItem{Integrated Google Maps Places and Geocoding APIs to validate and enrich geospatial data at ingestion — enforcing coordinate accuracy and address normalization — supporting reliable geographic queries across a configurable 5–100 mile search radius}
+                \resumeItem{Developed an admin analytics dashboard using Recharts to surface platform KPIs — spot approval rates, review volume trends, user role distribution, and moderation throughput — enabling data-informed decisions on community engagement and platform health}
+                \resumeItem{Implemented a structured 5-star rating system (0.5–5.0 decimal precision) generating a quantifiable community feedback dataset averaging 2.5 reviews per spot, suitable for sentiment analysis, preference modeling, and recommendation system development}
+                \resumeItem{Demonstrated end-to-end data lifecycle ownership — from relational schema design and geospatial ingestion through community data aggregation, moderation workflows, and KPI visualization — on a foundation designed to scale to 10,000+ users and 1,000+ indexed locations}
+            \resumeItemListEnd
+        \vspace{-10pt}
+
+        \resumeProjectHeading
+            {https://www.github.com/lakshya46jain/instruction-vs-preference-alignment/}
             {Instruction Tuning vs Preference Alignment in LLMs}
-            {}
+            {Python (PyTorch), Hugging Face}
             {Sep 2025 - Dec 2025}
             \resumeItemListStart
-                \resumeItem{}
-                \resumeItem{}
-                \resumeItem{}
+                \resumeItem{Engineered an end-to-end LLM post-training research pipeline comparing Supervised Fine-Tuning (SFT), Direct Preference Optimization (DPO), and a Hybrid SFT+DPO alignment strategy on TinyLlama-1.1B-Chat across customer support, healthcare, education, and enterprise workflow automation use cases}
+                \resumeItem{Accelerated model instruction-following capability by 98.9\% (training loss: 11.55 $\rightarrow$ 0.13) across 5,000 optimization steps by implementing LoRA-based parameter-efficient Supervised Fine-Tuning on attention projection layers, enabling full-scale alignment training within consumer-hardware memory constraints on Apple Silicon MPS}
+                \resumeItem{Processed and standardized a $\sim$72K instruction-response training corpus by designing reproducible preprocessing pipelines that merged Alpaca-style general instructions with cleaned Code Alpaca datasets, normalized missing-input markers, preserved code formatting integrity, and generated stratified JSONL train/validation splits (64,821 train / 7,203 validation)}
+                \resumeItem{Achieved $\sim$90\% DPO loss reduction (0.69 $\rightarrow$ 0.07) with 98--100\% preference-pair accuracy by architecting a Hybrid SFT+DPO pipeline that merged a trained LoRA adapter as a frozen reference distribution paired with a new trainable LoRA adapter for preference learning, outperforming standalone SFT and DPO variants on heuristic instruction-following evaluation (Hybrid: 0.445 vs.\ SFT/DPO: 0.290; rule-based task subset: Hybrid 0.574 vs.\ SFT/DPO 0.316) across 7 task categories spanning summarization, code generation, math, and reasoning}
+                \resumeItem{Uncovered actionable alignment failure modes across 4 model variants (Base: 0.539, SFT: 0.290, DPO: 0.290, Hybrid: 0.445) on 100 held-out validation examples through deterministic heuristic scoring pipelines, revealing via manual error analysis that SFT overfit stylistic patterns, DPO degraded under weak synthetic preference signals, and preference-data quality and model scale are the primary levers determining real-world alignment outcomes}
             \resumeItemListEnd
-            \vspace{-13pt}
+        \vspace{-10pt}
 
         \resumeProjectHeading
             {https://memora-by-bonvoy.vercel.app/}
             {Memora by Bonvoy -- Marriott CodeFest}
-            {React.js + Vite, TypeScript, Tailwind CSS, Supabase (PostgreSQL)}
+            {React.js + Vite, TypeScript, Tailwind CSS, PostgreSQL}
             {Oct 2025}
             \resumeItemListStart
-                \resumeItem{Engineered an AI-driven guest-experience prototype in 48 hours via React + OpenAI API + Supabase full-stack architecture}
-                \resumeItem{Architected a secure system with 20+ RLS policies and 49 API operations by deploying access control and edge functions}
-                \resumeItem{Leveraged research to project a $\sim$22\% uplift in Bonvoy member spending by synthesizing guest-journey workflows}
+                \resumeItem{Architected a production-grade, AI-powered guest personalization platform in 48 hours across a 5-person team targeting Marriott's 500M+ annual guests, by engineering a full-stack system with Deno Edge Functions — addressing the industry gap validated by SiteMinder's Changing Traveller Report 2025 that 78\% of travelers demand AI across their accommodation journey}
+                \resumeItem{Deployed a real-time semantic recommendation engine achieving sub-100ms inference latency and projected 15--25\% guest satisfaction uplift by implementing OpenAI text-embedding with cosine similarity ranking, diversity-balanced scoring, and continuous like/dislike feedback loops across 11+ multi-dimensional preference vectors (interests, dining, travel style, activity type)}
+                \resumeItem{Engineered a privacy-first, GDPR-aligned data architecture across an 8-table normalized PostgreSQL schema with 20+ Row-Level Security policies, 3-tier consent management (Private / Staff-Aggregated / Partner-Anonymized), MFA enforcement, and AES-256 encrypted cloud storage — mirroring Marriott's FTC-mandated data privacy obligations from its Oct 2024 regulatory settlement}
+                \resumeItem{Built a full guest-journey behavioral data pipeline capturing 10+ event types (deck\_opened, qr\_scanned, media\_uploaded, share\_trip, checkout) with real-time interaction tracking and TanStack React Query caching, enabling downstream KPI analysis across like/dislike ratio, QR redemption rate, and trip-sharing uplift — architected to support the proprietary behavioral data moat identified as a key competitive differentiator at the Skift 2025 Travel AI Summit}
+                \resumeItem{Modeled a partner commission and loyalty monetization pipeline projecting a $\sim$22\% uplift in Bonvoy member ancillary spending by designing a QR-verified experience check-in system with signed JWT tokens, anti-replay Redis validation, and automated Bonvoy points issuance — validated against Marriott CIO Naveen Manga's 2025 AI transformation roadmap prioritizing guest-facing agentic use cases}
             \resumeItemListEnd
-            \vspace{-13pt}
+        \vspace{-10pt}
 
         \resumeProjectHeading
             {https://www.github.com/lakshya46jain/data_career_dashboard/}
@@ -318,81 +337,75 @@
             {Python (Pandas, Matplotlib, NumPy, Scikit-Learn), Jupyter}
             {Mar 2025 -- May 2025}
             \resumeItemListStart
-                \resumeItem{Exposed \$70K+ pay variance across roles and regions by modeling a pipeline with 100K+ job records}
-                \resumeItem{Identified top 10 in-demand skills from 785K+ job descriptions using NLP techniques}
-                \resumeItem{Mapped junior-to-senior skill progression with role-specific word clouds from tokenized data}
-                \resumeItem{Segmented data roles into 4 salary-skill segments using KMeans and PCA to inform a data-driven career dashboard}
+                \resumeItem{Engineered an end-to-end data science pipeline — ingestion, cleaning, EDA, unsupervised learning, and visualizations — processing 785K+ job postings and 100K+ salary records to deliver a fully reproducible, industry-grade career intelligence dashboard}
+                \resumeItem{Accelerated compensation benchmarking accuracy by $\sim$50\% for hiring teams and job seekers by architecting a multi-stage deduplication and null-handling pipeline that eliminated 50K+ duplicate salary records from a noisy, real-world dataset}
+                \resumeItem{Revealed a \$37K salary variance across 4 distinct data role archetypes (\$98K--\$135K) by developing a KMeans + PCA clustering pipeline on hybrid feature vectors combining binary skill flags, compensation, and job-structure encodings}
+                \resumeItem{Identified the top 10 in-demand technical skills driving premium compensation by parsing, flattening, and frequency-ranking skill tokens across job descriptions using Pandas vectorized operations and collections.Counter}
+                \resumeItem{Enabled data-driven hiring and curriculum decisions for recruiters, HR teams, and educators by profiling 4 KMeans clusters with interpretable salary averages, skill prevalence rates, and role archetypes mapped to real-world job titles}
+                \resumeItem{Mapped junior-to-senior skill progression across 3 core roles (Data Analyst, Data Scientist, Data Engineer) by generating role-specific comparative word clouds from tokenized job description data, surfacing actionable upskilling priorities for hundreds of thousands of candidates}
+                \resumeItem{Reduced hiring friction and improved pay transparency for thousands of organizations by delivering skills-first role benchmarks derived from 785K+ postings, enabling more precise job descriptions and compensation alignment across the data industry}
+                \resumeItem{Delivered 3 fully shareable, interactive HTML reports with Plotly and Matplotlib visualizations covering salary trends (2020--2024), skill frequency rankings, and PCA cluster plots, making complex findings accessible to both technical and non-technical stakeholders}
             \resumeItemListEnd
-            \vspace{-13pt}
+        \vspace{-10pt}
 
         \resumeProjectHeading
             {https://real-estate-analyzer-iota.vercel.app/}
             {Real Estate Analyzer}
-            {React.js, Python (Pandas), PostgreSQL, Azure, REST API, Places API}
+            {React, TypeScript, Python (Pandas), PostgreSQL, Azure, REST APIs}
             {Sep 2024 -- Dec 2024}
             \resumeItemListStart
-                \resumeItem{Predicted real estate prices with 97.5\% accuracy ($R^2$ = 0.9747) using a Boosted Decision Tree model, improving reliability}
-                \resumeItem{Reduced MAE to \$87.9K and RMSE to \$181.8K via hyperparameter tuning and feature engineering, enhancing precision}
-                \resumeItem{Deployed model on 428K+ listings from top 10 cities across 45+ U.S. states via Azure ML Studio, scaling nationwide insights}
-                \resumeItem{Delivered a full-stack web prototype in 72 hours at VTHacks 12 by integrating the model with React.js and PostgreSQL}
+                \resumeItem{Shipped a full-stack property valuation platform within 72 hours at VTHacks 12 by integrating the Azure ML REST endpoint with a React + TypeScript frontend and PostgreSQL analytics backend}
+                \resumeItem{Engineered a Boosted Decision Tree regression model achieving 97.5\% prediction accuracy across 428K+ property listings, directly addressing a \$4.4 trillion U.S. residential real estate market where mispriced listings cost buyers and sellers tens of thousands of dollars per transaction}
+                \resumeItem{Slashed valuation error to MAE of \$87.9K and RMSE of \$181.8K — benchmarks competitive with institutional appraisal workflows — by executing iterative hyperparameter tuning, k-fold cross-validation, and multi-dimensional feature selection}
+                \resumeItem{Transformed a raw 2M+ record Kaggle U.S. real estate dataset into a production-grade, analysis-ready corpus by designing an end-to-end Python (Pandas) data pipeline handling missing value imputation, outlier detection, categorical encoding, and feature normalization across 45+ property attributes}
+                \resumeItem{Deployed a cloud-native ML inference pipeline on Azure ML Studio exposing the trained model as a production REST API, slashing valuation turnaround from the industry-standard days-to-weeks of manual appraisals down to milliseconds for real-time price prediction at scale}
+                \resumeItem{Instrumented a real-time PostgreSQL prediction logging system capturing model inputs, predicted values, and confidence scores per inference — enabling model performance monitoring, BI reporting, and audit-ready data trails critical for compliance in mortgage lending and institutional investment workflows}
+                \resumeItem{Surfaced actionable valuation insights — predicted price, confidence interval, and price range — to homebuyers, mortgage lenders, brokerages, proptech startups, and investment desks, reducing financial exposure that cost the U.S. market billions annually}
             \resumeItemListEnd
-            \vspace{-13pt}
-
-        \resumeProjectHeading
-            {}
-            {Social Media Visualizer}
-            {Java, Object-Oriented Programming}
-            {May 2024}
-            \resumeItemListStart
-                \resumeItem{Built a Java dashboard to track 3-month engagement trends across 4 influencers by implementing doubly linked lists}
-                \resumeItem{Improved test coverage and code reliability by adding 800+ lines of JUnit tests and internal documentation}
-                \resumeItem{Collaborated in a team of 4 using Git and GitHub to manage version control and streamline feature development}
-            \resumeItemListEnd
-            \vspace{-13pt}
-
-        \resumeProjectHeading
-            {}
-            {Ticket Automation System}
-            {AppSheet, Google Sheets, Google Forms, Apps Script}
-            {Nov 2023}
-            \resumeItemListStart
-                \resumeItem{Automated check-in for 400+ event attendees by integrating AppSheet with Google Sheets and Forms for ticketing}
-                \resumeItem{Enabled real-time ticket scanning by configuring AppSheet actions, improving entry flow and reducing manual work}
-            \resumeItemListEnd
-            \vspace{-13pt}
+        \vspace{-10pt}
 
         \resumeProjectHeading
             {https://www.github.com/lakshya46jain/help4you/}
             {Help4You -- Cross-Platform Service Connector}
-            {Flutter, Firebase, OneSignal, REST APIs}
+            {Flutter, Firebase (Firestore, Storage), REST APIs}
             {Aug 2021 -- Jul 2023}
             \resumeItemListStart
-                \resumeItem{Developed a mobile app with 15+ UI screens to streamline service booking and real-time user–provider messaging}
-                \resumeItem{Architected a Firebase backend (Auth, Firestore, Storage), cutting write costs by $\sim$80\% via references and normalization}
-                \resumeItem{Optimized chat queries to sub-100ms by structuring composite keys and message subcollections in Firestore}
-                \resumeItem{Implemented real-time sync with $<$1s latency by using Firestore snapshot listeners instead of polling}
+                \resumeItem{Architected a dual-sided mobile service marketplace — 2 complementary Flutter apps spanning 34 UI screens, 99 Dart source files, and 8 data models — deployed cross-platform on Android and iOS via a modular state management pattern and shared Firebase backend}
+                \resumeItem{Reduced Firestore database costs by $\sim$80\% and achieved sub-100ms chat query latency by normalizing data across 5 dedicated collections and applying server-side filters to scope reads exclusively to relevant documents}
+                \resumeItem{Delivered real-time bidirectional messaging with $<$1s sync latency across two user roles by replacing polling with event-driven stream listeners, enabling instant UI updates without manual refresh or redundant backend calls}
+                \resumeItem{Engineered a full-funnel booking pipeline -- category discovery, professional selection, Google Maps live-geolocation address capture, time-slot scheduling, payment tracking -- reducing customer-to-confirmation coordination time by an estimated 50\%+ vs.\ traditional phone and text workflows}
+                \resumeItem{Modeled projected business impact at scale: 2--3 hrs/week of admin overhead eliminated per professional, 15--25\% booking conversion improvement, \$300--\$500/month incremental revenue per active provider, and capacity for 5,000--10,000 monthly end-user interactions at 1,000-professional network size}
+                \resumeItem{Targeted a \$600B+ global local services industry gap -- professionals still relying on calls and manual scheduling -- by unifying service discovery, messaging, booking management, and reviews in one platform, eliminating coordination friction across the gig economy.}
+                \resumeItem{Designed an analytics-ready, normalized Firestore schema across 5 collections with server-side filtered queries, timestamp-ordered retrieval, and subcollection message threading -- directly extensible to BI dashboards, booking funnel analysis, and ML-driven recommendations without schema migration}
             \resumeItemListEnd
+    
     \resumeSubHeadingListEnd
-    \vspace{-16pt}
 
 \section{Leadership Experiences}
     \resumeSubHeadingListStart
+    
         \resumeSubheadingTwo
             {Indian Students Association at Virginia Tech}{Blacksburg, VA}
-            {President}{May 2024 -- May 2025}
+            {President}{May 2024 -- Dec 2025}
             \resumeItemListStart
-                \resumeItem{Led a 30-member team to host 6+ events for 500+ attendees campus-wide by streamlining planning and execution}
-                \resumeItem{Secured \$15,000+ in funding, surpassing financial targets by 15\% through strategic sponsorship outreach and proposals}
-                \resumeItem{Improved team performance and event quality by 50\% by mentoring members in communication, planning, and teamwork}
+                \resumeItem{Drove data-informed event strategy for 500+ attendees across 6+ large-scale productions, achieving a 25\% increase in attendee satisfaction scores by leveraging post-event feedback analytics, iterating on programming decisions, and orchestrating end-to-end event operations including AV, lighting, stage management, and multi-vendor coordination}
+                \resumeItem{Exceeded annual revenue targets by 15\%, securing \$15,000+ in organizational funding by architecting a multi-channel financial strategy encompassing corporate sponsorship acquisition, structured proposal development, ticket sales pipelines, crowdfunding campaigns, and on-campus firm incentive partnerships to diversify and scale revenue streams}
+                \resumeItem{Optimized vendor procurement costs by 30\% on average across all contracts during tenure by conducting competitive bid benchmarking, negotiating favorable contract terms, and building sustained vendor relationships -- directly improving budget efficiency and resource allocation for all organizational operations}
+                \resumeItem{Improved team performance and event execution quality by 50\% -- measured by 40\% reduction in planning errors, consistent event attendance growth, and internal team feedback surveys -- by designing structured mentorship frameworks and leading a 30-member cross-functional team in communication protocols, agile planning methodologies, and accountability-driven workflows}
+                \resumeItem{Grew community engagement and active membership by $\sim$20\% over tenure by applying data-driven decision-making through systematic collection and comparative analysis of feedback form datasets spanning historical and current cohorts, enabling iterative improvements to culturally resonant, high-retention programming}
+                \resumeItem{Engineered scalable operational infrastructure for a 30-member volunteer organization and multi-vendor ecosystem by standardizing end-to-end planning workflows on Google and Microsoft Suite, reducing cross-team miscommunication and improving on-time task delivery across all event production cycles}
             \resumeItemListEnd
         
         \vspace{-4pt}
         \resumeSubSubheading
-            {Tech-Team Coordinator}{Sep 2023 -- May 2024}
+            {Tech-Team Coordinator}{Sep 2023 -- Apr 2024}
             \resumeItemListStart
-                \resumeItem{Automated the ticketing system using Google AppSheet, streamlining check-in for 400+ event attendees}
-                \resumeItem{Oversaw production services at Virginia Tech for performances with 500–600 attendees, ensuring smooth operations}
+                \resumeItem{Architected and deployed a 10-page data-driven web platform from scratch for a 1,000+ member organization, driving 6,093 unique visitors, 18,369 page views, and 3:41 avg. session duration, by building end-to-end event registration, student-connect tools, and dynamic content pipelines on Wix}
+                \resumeItem{Mitigated PII data confidentiality risk by engineering a role-based access control (RBAC) framework across Microsoft SharePoint and Teams, migrating 1,000+ unstructured records from Google Workspace within 3 weeks and enforcing 6 permission tiers (president, treasurer, executive board, sub-committee, general members, public)}
+                \resumeItem{Reduced event check-in latency by 75\% (120s to 30s per attendee) across 3 large-scale events (500+ attendees each) by designing and deploying an end-to-end automated ticketing pipeline integrating Google AppSheet, Sheets, and Forms with real-time QR-code scanning, eliminating manual spreadsheet lookups and mis-identification errors}
+                \resumeItem{Managed full-stack production operations for 3 live cultural performances (500--600 attendees) at Virginia Tech, orchestrating AV systems, lighting, and logistics across 5 external vendors per event}
             \resumeItemListEnd
+    
     \resumeSubHeadingListEnd
 
 %------------------------------------------------
