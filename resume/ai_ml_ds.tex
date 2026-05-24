@@ -1,0 +1,251 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\usepackage[margin=0.35in]{geometry}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\usepackage{ifthen} % for conditional logic
+
+% Sections formatting
+\titleformat{\section}{
+  \color{black}\vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
+}
+
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1}{ -- }\textit{\small #3}%
+      \ifthenelse{\equal{#4}{}}{}{, \textit{\small #4}}%
+      & \textbf{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingTwo}[4]{ % Used for \resumeSubSubheading
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#3} & \textbf{\small #4} \\
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeEducationSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[4]{%
+  \vspace{-2pt}\item
+  \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+    \small{%
+      \ifthenelse{\equal{#1}{}}%
+        {%
+          \textbf{#2}%
+          \ifthenelse{\equal{#3}{}}{}{ $|$ \emph{#3}}%
+        }%
+        {%
+          \href{#1}{\underline{\textbf{#2}}~\faLink}%
+          \ifthenelse{\equal{#3}{}}{}{ $|$ \emph{#3}}%
+        }%
+    } & \textbf{\small #4} \\
+  \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\resumeItemListStartNoBullet}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeItemListEndNoBullet}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%
+
+\begin{document}
+
+\begin{center}
+    \textbf{\Huge \scshape Lakshya Jain} \\ \vspace{7.5pt}
+    \small{
+        \href{tel:1-540-605-0261}{\faPhone\ \underline{+1 (540) 605-0261}} ~
+        \href{mailto:lakshya46jain@gmail.com}{\faEnvelope\ \underline{lakshya46jain@gmail.com}} ~
+        \href{https://linkedin.com/in/lakshya46jain}{\faLinkedin\ \underline{linkedin.com/in/lakshya46jain}} ~
+        \href{https://github.com/lakshya46jain}{\faGithub\ \underline{github.com/lakshya46jain}}
+        }
+    \vspace{-2.5pt}
+\end{center}
+
+\vspace{-4pt}
+\begin{center}
+    \small{Computer Science graduate experienced in ML model development, NLP research, and data engineering, seeking AI/ML or Data Science roles where rigorous experimentation drives product decisions.}
+\end{center}
+
+\section{Education}
+    \resumeSubHeadingListStart
+        \resumeEducationSubheading
+            {Virginia Polytechnic Institute and State University (Virginia Tech)}
+            {Graduated: May 2026}
+            {Bachelor of Science (B.Sc.) in Computer Science -- Data-Centric Computing}
+            {Blacksburg, VA}
+            \small{\item[]{\textbf{Distinction}{: Cum Laude} $|$ \textbf{Major GPA}{: 3.84/4.00} $|$ \textbf{Overall GPA}{: 3.43/4.00} $|$ Dean's List}}
+    \resumeSubHeadingListEnd
+
+\section{Skills \& Certifications}
+    \begin{itemize}[leftmargin=0in, label={}]
+        \small{\item{
+                \textbf{Languages}{: Python, SQL (Advanced), R} \\
+                \textbf{ML \& Data Science}{: PyTorch, Scikit-Learn, Hugging Face Transformers, NumPy, Pandas, SciPy, BERTopic, NetworkX} \\
+                \textbf{MLOps \& Data Engineering}{: Databricks, Delta Lake, PySpark, Power Automate, Docker, REST APIs} \\
+                \textbf{Databases \& BI}{: PostgreSQL, MySQL, Firebase, Power BI, Tableau, DAX} \\
+                \textbf{Cloud}{: AWS (EC2, S3, RDS, Lambda), Microsoft Azure (ML Studio), Google Cloud Platform} \\
+                \textbf{Certifications}{: AWS Certified Cloud + AI Practitioner (2026), DataCamp Associate Data Engineer (2025), Microsoft Azure AI Fundamentals (2022), ServiceNow Certified System Administrator (Pursuing), Six Sigma White Belt (Pursuing)} \\
+        }}
+    \end{itemize}
+
+\section{Experience}
+    \resumeSubHeadingListStart
+
+        \resumeSubheading
+            {Student Hiring Administrator}
+            {Apr 2025 -- May 2026}
+            {Virginia Tech Student Affairs}
+            {Blacksburg, VA}
+            \resumeItemListStart
+                \resumeItem{Engineered automated ETL pipelines via Power Automate integrating Active Directory, SharePoint, and DocuSign, reducing per-applicant processing time by ${\sim}$90\% and reclaiming 550--900+ administrative hours annually for 3,000+ hires}
+                \resumeItem{Built executive Power BI dashboards with DAX and seasonal adjustment logic, replacing manual spreadsheet reporting and surfacing real-time workforce retention and labor utilization analytics that informed multi-million-dollar budget decisions}
+            \resumeItemListEnd
+
+        \resumeSubheading
+            {Undergraduate Research Assistant}
+            {Aug 2025 -- Dec 2025}
+            {Virginia Tech Department of Sociology}
+            {Blacksburg, VA}
+            \resumeItemListStart
+                \resumeItem{Benchmarked vendor discourse across 487 facial recognition firms by building a dictionary-based NLP framing classifier in Python, producing 3 normalized scores (ethical, surveillance, market) per company $\times$ year over 9,994 documents}
+                \resumeItem{Revealed commercial, ethical, and surveillance positioning splits across 228, 130, and 51 firms respectively at $\geq$0.5 threshold, delivering actionable market-segmentation intelligence for regulators and procurement teams}
+                \resumeItem{Uncovered 40+ latent policy and market themes across 3 decades of vendor content by applying BERTopic with transformer embeddings, UMAP reduction, and HDBSCAN clustering, validated via intertopic distance maps and manual spot-checks}
+                \resumeItem{Distilled 56,292 raw Wayback Machine HTML snapshots into an analysis-ready 9,994-document corpus by engineering a 7-stage modular pipeline using BeautifulSoup, langdetect, and custom deduplication logic across 487 vendors}
+            \resumeItemListEnd
+
+        \resumeSubheading
+            {Data Engineering Intern}
+            {Jun 2025 -- Aug 2025}
+            {The Modern Data Company}
+            {Palo Alto, CA (Remote)}
+            \resumeItemListStart
+                \resumeItem{Architected a proof-of-concept Schema Drift Agent on Databricks/Delta Lake, integrating GPT-4o to auto-generate PySpark/SQL remediation code from detected schema changes, reducing manual intervention risk for BI and Reverse ETL}
+                \resumeItem{Engineered a recursive struct comparison engine with dot-notation path tracking to detect added, removed, renamed, and type-changed fields across arbitrarily nested schemas, achieving 100\% validation coverage across 32 test cases}
+                \resumeItem{Designed 10+ production-grade prompt templates with enforced output contracts and safety guardrails, turning schema diffs into deterministic, review-ready PySpark/SQL via a modular template-routing pipeline}
+                \resumeItem{Improved rename detection precision across 11 rename and 4 type-cast scenarios by diagnosing faulty heuristic logic and replacing it with hint-guided flattening strategies, documenting failure modes and scope against industry benchmarks}
+            \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+\section{Project Experience}
+    \resumeSubHeadingListStart
+    
+        \resumeProjectHeading
+            {https://www.github.com/lakshya46jain/empirical-link-prediction-study/}
+            {Empirical Link Prediction Study in Healthcare}
+            {Python (SciPy, Scikit-Learn, PyTorch)}
+            {Jan 2026 - May 2026}
+            \resumeItemListStart
+                \resumeItem{Benchmarked 7 link prediction methods (Common Neighbors, Jaccard, Adamic-Adar, Preferential Attachment, Node2Vec, MLP scoring, R-GCN) against MAP@3 framework on a 9,424-node heterogeneous clinical graph of 77,629 interactions}
+                \resumeItem{Outperformed unsupervised Node2Vec 4$\times$ (MAP@3 0.0405 vs. 0.0104) by replacing dot-product similarity with supervised MLP scoring heads trained under BCE and Bayesian Personalized Ranking objectives on identical graph embeddings}
+                \resumeItem{Uncovered via ablation that classical Adamic-Adar (MAP@3 0.0566) outperformed all 6 competing methods including the relation-aware R-GCN, delivering evidence-backed guidance on when advanced graph learning yields measurable clinical value over interpretable baselines}
+            \resumeItemListEnd
+        \vspace{-10pt}
+
+        \resumeProjectHeading
+            {https://poker-player-profiling.vercel.app/}
+            {Poker Player Profiling}
+            {Python (Scikit-Learn, Matplotlib, Seaborn), Jupyter}
+            {Mar 2026 - May 2026}
+            \resumeItemListStart
+                \resumeItem{Achieved 3.3$\times$ improvement in cluster cohesion (silhouette 0.4420 vs. baseline 0.1347) by replacing VPIP/PFR heuristic labels with K-Means clustering (K=2--8) with StandardScaler normalization and optimal K selection via elbow analysis on 19.58M hand records across 16,439 players}
+                \resumeItem{Exposed critical failure of rule-based classification where 93.5\% of players collapsed into 2 archetypes and TAG captured only 32 players, by cross-tabulating heuristic labels against K-Means clusters, motivating the shift to unsupervised behavioral analytics}
+                \resumeItem{Discovered 4 interpretable behavioral personas (Conservative: 8,542, Loose-Passive: 4,838, Moderately Aggressive: 2,337, Hyper-Aggressive: 722) by analyzing cluster centroids, uncovering hidden aggression subgroups masked within broad LAG labels}
+                \resumeItem{Validated tight vs. loose play as the dominant behavioral signal (K=2 silhouette: 0.4917) by benchmarking all K configurations, with direct applicability to customer segmentation, fraud detection, and opponent modeling pipelines}
+            \resumeItemListEnd
+        \vspace{-10pt}
+
+        \resumeProjectHeading
+            {https://real-estate-analyzer-iota.vercel.app/}
+            {Real Estate Analyzer}
+            {React, TypeScript, Python (Pandas), PostgreSQL, Azure, REST APIs}
+            {Sep 2024 -- Dec 2024}
+            \resumeItemListStart
+                \resumeItem{Engineered a Gradient Boosted Decision Tree regression model achieving 97.5\% prediction accuracy (MAE \$87.9K, RMSE \$181.8K) across 428K+ property listings by executing iterative hyperparameter tuning, k-fold cross-validation, and feature selection across 45+ attributes on a 2M+ record dataset.}
+                \resumeItem{Deployed a cloud-native ML inference pipeline on Azure ML Studio as a production REST API, reducing property valuation turnaround from days-to-weeks of manual appraisal to millisecond-latency real-time inference.}
+                \resumeItem{Shipped a full-stack valuation platform in 72 hours at VTHacks 12 integrating the Azure ML endpoint with a React + TypeScript frontend, PostgreSQL prediction logging, and per-inference confidence score tracking for model performance monitoring.}
+            \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+\section{Leadership Experience}
+    \resumeSubHeadingListStart
+
+        \resumeSubheading
+            {President}
+            {May 2024 -- Dec 2025}
+            {Indian Students Association at Virginia Tech}
+            {Blacksburg, VA}
+            \resumeItemListStart
+                \resumeItem{Led data-driven event strategy for 500+ attendees across 6+ large-scale productions, iterating on programming decisions through post-event feedback analytics to drive a 25\% increase in attendee satisfaction scores.}
+                \resumeItem{Grew active membership by ${\sim}$20\% by systematically collecting and comparatively analyzing feedback datasets across historical and current cohorts to inform culturally resonant, high-retention programming.}
+            \resumeItemListEnd
+            
+    \resumeSubheadingListEnd
+%------------------------------------------------
+\end{document}
